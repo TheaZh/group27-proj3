@@ -77,4 +77,4 @@ Original dataset: https://data.cityofnewyork.us/dataset/311-Service-Requests-Fro
 		DELETE FROM table311small where Community_Board = '0 Unspecified';
 		DELETE FROM table311small where Complaint_Type = 'Missed Collection (All Materials)';
 
-		\copy (Select distinct community_board, created_date, complaint_type, descriptor From table311small Order By community_board, created_date, complaint_type, descriptor) To '/Users/peter/Study/17Fall/6111/project3/311_2015_remove0.csv' With CSV HEADER;
+		\copy (Select distinct community_board, created_date, complaint_type From table311small Order By community_board, created_date, complaint_type) To '/Users/peter/Study/17Fall/6111/project3/311_2015_remove0.csv' With CSV HEADER;
