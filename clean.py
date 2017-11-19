@@ -28,7 +28,7 @@ with open('311_2015_remove0.csv', 'rb') as csvfile:
 			file.write(complaint_type)
 			# file.write("~")
 			# file.write(descriptor)
-		
+
 		# if reader.line_num == 100000:
 			# break
 

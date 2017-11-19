@@ -3,12 +3,13 @@ from itertools import combinations
 class aPriori(object):
     """docstring for aPriori."""
 
-    def __init__(self, baskets, minconf = 0.75, minsupp = 0.7):
+    def __init__(self, baskets, minsupp = 0.01, minconf = 0.5):
         self.baskets = baskets
         self.minconf = minconf
         self.minsupp = minsupp
         self.supp_table = {}
         self.generate_tuples()
+        self.print_tuples()
         self.filter_by_conf()
 
     def supp(self, c):
@@ -65,16 +66,17 @@ class aPriori(object):
 
             # check every candidate's support
             for c in Ckp1:
-                print "c", c
-                print "min",self.minsupp
                 if self.supp(c) >= self.minsupp:
                     res.append(c)
                     Lkp1.add(c)
-                    print res
-                    print Lkp1
             Lk = Lkp1
 
         self.supportive_tuples = res
+
+    def print_tuples(self):
+        for tup in self.supportive_tuples:
+            print tup, "supp:", self.supp(tup)
+
 
     def filter_by_conf(self):
         """
