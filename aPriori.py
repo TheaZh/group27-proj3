@@ -55,6 +55,7 @@ class aPriori(object):
             Lkp1 = set()
 
             # generate candidates Ckp1
+            ''' # old method
             Ckp1 = set()
             for l in Lk:
                 # ItemSet - l
@@ -63,7 +64,12 @@ class aPriori(object):
 
                 for i in ItemSet_l:
                     Ckp1.add(tuple(sorted(l + (i,))))
+            '''
 
+            if k == 1:
+                Ckp1 = self.generate_C1(ItemSet)
+            else:
+                Ckp1 = self.generate_from_Lk(Lk)
             # check every candidate's support
             for c in Ckp1:
                 if self.supp(c) >= self.minsupp:
@@ -72,6 +78,26 @@ class aPriori(object):
             Lk = Lkp1
 
         self.supportive_tuples = res
+
+    def generate_C1(self, ItemSet):
+        C1 = set()
+        for item in ItemSet:
+            C1.add((item,))
+        return C1
+
+    def generate_from_Lk(self, Lk):
+        Ckp1 = set()
+        for p in Lk:
+            p_items = set(p)
+            for q in Lk:
+                q_items = set(q)
+                intersention = p_items & q_items
+                if len(intersention) == (len(p_items) - 1):
+                    p_k = (p_items - intersention).pop()
+                    q_k = (q_items - intersention).pop()
+                    if p_k < q_k:
+                        Ckp1.add(tuple(sorted(p + (q_k,))))
+        return Ckp1
 
     def print_tuples(self):
         for tup in self.supportive_tuples:
@@ -104,7 +130,7 @@ def main():
     baskets.append(["pen", "diary"])
     baskets.append(["pen", "ink", "soap"])
 
-    apriori = aPriori(baskets)
+    apriori = aPriori(baskets, 0.7, 0.7)
 
 
 if __name__ == '__main__':
