@@ -3,7 +3,7 @@ from aPriori import aPriori
 import sys
 
 def main(filename, min_supp, min_conf):
-    baskets = read(filename, 1100) # reaf 100 lines
+    baskets = read(filename, 20000) # read 10000 lines
     apriori = aPriori(baskets, min_supp, min_conf)
 
 if __name__ == '__main__':

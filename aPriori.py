@@ -44,15 +44,16 @@ class aPriori(object):
 
         k = 0
         Lk = set()
-        Lk.add(tuple())
+        # Lk.add(tuple())
 
         # generate every supportive tuple add to res
         res = []
         while True:
-            if len(Lk) == 0:
+            if k != 0 and len(Lk) == 0:
                 break
             k += 1
             Lkp1 = set()
+            # print Lk
 
             # generate candidates Ckp1
             ''' # old method
