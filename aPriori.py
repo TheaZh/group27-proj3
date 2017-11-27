@@ -105,12 +105,14 @@ class aPriori(object):
         print '==Frequent itemsets (min_sup =', str(self.minsupp) + ')'
         for tup in self.supportive_tuples:
             tmp_itemset = ', '.join(tup)
-            print "[{}], {}".format(tmp_itemset, self.supp(tup))
+            print "[{}], {}".format(tmp_itemset, "{0:g}%".format(self.supp(tup)*100))
+            # print "--[{}], {}".format(tmp_itemset, "{0:.0f}%".format(self.supp(tup)*100))
 
     def print_rules(self):
         res_rules = sorted(self.rules_list, key = lambda x : (-x[1], x[0]))
         for rule in res_rules:
-            print "{} (Conf: {}, Supp: {})".format(rule[0], rule[1], rule[2])
+            print "{} (Conf: {}, Supp: {})".format(rule[0],  "{0:g}%".format(rule[1]*100), "{0:g}%".format(rule[2]*100))
+            # print "--{} (Conf: {}, Supp: {})".format(rule[0],  "{0:.0f}%".format(rule[1]*100), "{0:.0f}%".format(rule[2]*100))
 
     def filter_by_conf(self):
         """
@@ -158,8 +160,9 @@ def main():
     baskets.append(["pen", "ink", "diary"])
     baskets.append(["pen", "diary"])
     baskets.append(["pen", "ink", "soap"])
-
-    apriori = aPriori(baskets, 0.6, 0.7)
+    # baskets.append(["pen", "cake"])
+    # baskets.append(["cake", "soap"])
+    apriori = aPriori(baskets, 0.2, 0.3)
 
 
 if __name__ == '__main__':
