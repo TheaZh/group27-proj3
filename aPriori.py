@@ -77,8 +77,9 @@ class aPriori(object):
                     res.append(c)
                     Lkp1.add(c)
             Lk = Lkp1
-
-        self.supportive_tuples = res
+        final_res = sorted(res, key= lambda x : (-self.supp(x), x))
+        # print 'res:', final_res
+        self.supportive_tuples = final_res
 
     def generate_C1(self, ItemSet):
         C1 = set()
@@ -101,30 +102,53 @@ class aPriori(object):
         return Ckp1
 
     def print_tuples(self):
-        print '==Frequent itemsets (min_sup =', str(self.supp) + ')'
+        print '==Frequent itemsets (min_sup =', str(self.minsupp) + ')'
         for tup in self.supportive_tuples:
-            print tup, "supp:", self.supp(tup)
+            tmp_itemset = ', '.join(tup)
+            print "[{}], {}".format(tmp_itemset, self.supp(tup))
 
+    def print_rules(self):
+        res_rules = sorted(self.rules_list, key = lambda x : (-x[1], x[0]))
+        for rule in res_rules:
+            print "{} (Conf: {}, Supp: {})".format(rule[0], rule[1], rule[2])
 
     def filter_by_conf(self):
         """
         compute conf
         """
+        self.rules_list = []
+
         print '==High-confidence association rules (min_conf =', str(self.minconf) + ')'
         for tup in self.supportive_tuples:
             size = len(tup)
 
             if size > 1:
-                for i in range(1, size):
+                '''for i in range(1, size):
                     # LHS of size i
-                    LHSs_size_i = combinations(tup, i)
-                    for LHS in LHSs_size_i:
+                    LHSs_size = combinations(tup, i)
+                    for LHS in LHSs_size:
+                        print 'LSH:', LHS
                         RHS = tuple(sorted(set(tup) - set(LHS)))
                         confidence = self.conf(LHS, tup)
                         supp = self.supp(tup)
                         if confidence >= self.minconf:
                             # print "{} => {} conf = {}".format(LHS, RHS, confidence)
-                            print "{} => {} (Conf: {}, Supp: {})".format(LHS, RHS, confidence, supp)
+                            print "{} => {} (Conf: {}, Supp: {})".format(LHS, RHS, confidence, supp)'''
+                # LHS size
+                # only have one item on the right side
+                LHSs_size = combinations(tup, size-1)
+                for LHS in LHSs_size:
+                    RHS = tuple(sorted(set(tup) - set(LHS)))
+                    confidence = self.conf(LHS, tup)
+                    supp = self.supp(tup)
+                    if confidence >= self.minconf:
+                        # print "{} => {} conf = {}".format(LHS, RHS, confidence)
+                        LHS_str = ', '.join(LHS)
+                        cur_rule = "[{}] => [{}]".format(LHS_str, RHS[0])
+                        self.rules_list.append([cur_rule, confidence, supp])
+        # print self.rules_list
+        # print "[{}] => [{}] (Conf: {}, Supp: {})".format(LHS_str, RHS[0], confidence, supp)
+        self.print_rules();
 
 
 
@@ -135,7 +159,7 @@ def main():
     baskets.append(["pen", "diary"])
     baskets.append(["pen", "ink", "soap"])
 
-    apriori = aPriori(baskets, 0.7, 0.7)
+    apriori = aPriori(baskets, 0.6, 0.7)
 
 
 if __name__ == '__main__':
