@@ -101,6 +101,7 @@ class aPriori(object):
         return Ckp1
 
     def print_tuples(self):
+        print '==Frequent itemsets (min_sup =', str(self.supp) + ')'
         for tup in self.supportive_tuples:
             print tup, "supp:", self.supp(tup)
 
@@ -109,6 +110,7 @@ class aPriori(object):
         """
         compute conf
         """
+        print '==High-confidence association rules (min_conf =', str(self.minconf) + ')'
         for tup in self.supportive_tuples:
             size = len(tup)
 
@@ -119,8 +121,10 @@ class aPriori(object):
                     for LHS in LHSs_size_i:
                         RHS = tuple(sorted(set(tup) - set(LHS)))
                         confidence = self.conf(LHS, tup)
+                        supp = self.supp(tup)
                         if confidence >= self.minconf:
-                            print "{} => {}: conf = {}".format(LHS, RHS, confidence)
+                            # print "{} => {} conf = {}".format(LHS, RHS, confidence)
+                            print "{} => {} (Conf: {}, Supp: {})".format(LHS, RHS, confidence, supp)
 
 
 
