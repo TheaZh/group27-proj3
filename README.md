@@ -64,17 +64,23 @@ Original dataset: https://data.cityofnewyork.us/dataset/311-Service-Requests-Fro
 		\copy (Select Unique_Key, Created_Date, Complaint_Type, Descriptor, Community_Board From table311) To '/Users/peter/Study/17Fall/6111/project3/311_2015_tmp.csv' With CSV HEADER;
 
 
-		create table table311small (
-		Unique_Key int ,
-		Created_Date date ,
-		Complaint_Type text ,
-		Descriptor text ,
-		Community_Board text  
-		);
+```sql
+	create table table311small (
+	Unique_Key int ,
+	Created_Date date ,
+	Complaint_Type text ,
+	Descriptor text ,
+	Community_Board text  
+	);
 
-		\copy table311small FROM '/Users/peter/Study/17Fall/6111/project3/311_2015_tmp.csv'  DELIMITER ',' CSV HEADER
+	\copy table311small FROM '/Users/peter/Study/17Fall/6111/project3/311_2015_tmp.csv'  DELIMITER ',' CSV HEADER
 
-		DELETE FROM table311small where Community_Board = '0 Unspecified';
-		DELETE FROM table311small where Complaint_Type = 'Missed Collection (All Materials)';
+	DELETE FROM table311small where Community_Board = '0 Unspecified';
+	DELETE FROM table311small where Complaint_Type = 'Missed Collection (All Materials)';
 
-		\copy (Select distinct community_board, created_date, complaint_type From table311small Order By community_board, created_date, complaint_type) To '/Users/peter/Study/17Fall/6111/project3/311_2015_remove0.csv' With CSV HEADER;
+	\copy (Select distinct community_board, created_date, complaint_type From table311small Order By community_board, created_date, complaint_type) To '/Users/peter/Study/17Fall/6111/project3/311_2015_remove0.csv' With CSV HEADER;
+
+	\copy (Select distinct community_board, created_date, Descriptor From table311small Order By community_board, created_date, Descriptor) To '/Users/peter/Study/17Fall/6111/project3/311_2015_remove1.csv' With CSV HEADER;
+
+    \copy (Select distinct community_board, created_date, complaint_type, Descriptor From table311small Order By community_board, created_date, complaint_type, Descriptor) To '/Users/peter/Study/17Fall/6111/project3/311_2015_remove2.csv' With CSV HEADER;
+```

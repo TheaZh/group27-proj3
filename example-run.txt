@@ -1,0 +1,10 @@
+==Frequent itemsets (min_sup=60%)
+[noise - residential~banging/pounding], 69%
+[noise - residential~loud music/party], 75%
+[heat/hot water~entire building], 62%
+[blocked driveway~no access], 68%
+[street condition~pothole], 67%
+[noise - residential~banging/pounding,noise - residential~loud music/party], 62%
+==High-confidence association rules (min_conf=75%)
+[noise - residential~banging/pounding] => [noise - residential~loud music/party] (Conf: 90%, Supp: 62%)
+[noise - residential~loud music/party] => [noise - residential~banging/pounding] (Conf: 82%, Supp: 62%)

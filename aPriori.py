@@ -9,8 +9,8 @@ class aPriori(object):
         self.minsupp = minsupp
         self.supp_table = {}
         self.generate_tuples()
-        self.print_tuples()
-        self.filter_by_conf()
+        # self.print_tuples()
+        # self.filter_by_conf()
 
     def supp(self, c):
         if c in self.supp_table:
@@ -104,11 +104,27 @@ class aPriori(object):
         for tup in self.supportive_tuples:
             print tup, "supp:", self.supp(tup)
 
+    def get_tuples_string(self):
+        res = []
+        for tup in self.supportive_tuples:
+            items_str = "["
+            i = 0
+            for item in tup:
+                if i == 0:
+                    items_str += item
+                else :
+                    items_str += ("," + item)
+                i += 1
+            items_str += ("], " + str(int(round(self.supp(tup) * 100))) + "%")
+            res.append(items_str)
+        return res
+
 
     def filter_by_conf(self):
         """
         compute conf
         """
+        rule_strs = []
         for tup in self.supportive_tuples:
             size = len(tup)
 
@@ -120,7 +136,28 @@ class aPriori(object):
                         RHS = tuple(sorted(set(tup) - set(LHS)))
                         confidence = self.conf(LHS, tup)
                         if confidence >= self.minconf:
-                            print "{} => {}: conf = {}".format(LHS, RHS, confidence)
+                            # print "{} => {}: conf = {}".format(LHS, RHS, confidence)
+                            left = "["
+                            i = 0
+                            for item in LHS:
+                                if i == 0:
+                                    left += item
+                                else :
+                                    left += "," + item
+                                i += 1
+                            left += "]"
+                            right = "["
+                            i = 0
+                            for item in RHS:
+                                if i == 0:
+                                    right += item
+                                else :
+                                    right += "," + item
+                                i += 1
+                            right += "]"
+                            rule_strs.append("{} => {} (Conf: {}%, Supp: {}%)".format(left, right, str(int(round(confidence*100))), str(int(round(self.supp(tup)*100)))))
+
+        return rule_strs
 
 
 
@@ -131,7 +168,9 @@ def main():
     baskets.append(["pen", "diary"])
     baskets.append(["pen", "ink", "soap"])
 
-    apriori = aPriori(baskets, 0.7, 0.7)
+    apriori = aPriori(baskets, 0.7, 0.8)
+    print apriori.get_tuples_string()
+    print apriori.filter_by_conf()
 
 
 if __name__ == '__main__':
