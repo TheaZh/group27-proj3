@@ -1,4 +1,60 @@
-# group27-proj3
+# COMS6111 Project 2
+COMS6111 Project 2
+
+Group Name
+--------
+Project 2 Group 27
+
+Group Member
+--------
+   Qianwen Zheng (qz2271)
+
+   Jiajun Zhang (jz2793)
+   
+Files
+--------
+	file-tree
+
+Run
+--------
+
+1. Clone project
+	Install git if you haven't
+
+		sudo apt-get install git
+
+	then, clone project
+	
+		git clone https://github.com/petercanmakit/group27-proj3.git
+
+2. Navigate to folder
+
+		cd ./group27-proj3
+
+3. Install dependencies
+
+		sudo apt install python-pip
+		sudo pip install -r requirements.txt
+		
+4. Run program
+		
+		python app.py INTEGRATED-DATASET.csv [min_supp] [min_conf]
+		
+Description
+---------
+1. The data set
+
+2. Map the original NYC Open Data data set into our INTEGRATED-DATASET file
+
+3. INTEGRATED-DATASET file 
+
+
+Internal Design
+---------
+
+
+Command Line Specification
+---------
 
 Original dataset: https://data.cityofnewyork.us/dataset/311-Service-Requests-From-2015/57g5-etyj
 
