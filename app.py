@@ -5,27 +5,8 @@ import sys
 def main(filename, min_supp, min_conf):
     baskets = read(filename, 30000) # read such number of lines
     apriori = aPriori(baskets, min_supp, min_conf)
-    association_header = "==Frequent itemsets (min_sup={}%)".format(str(int(round(min_supp*100))))
-    associations = apriori.get_tuples_string()
-    print association_header
-    print associations
-    rule_header = "==High-confidence association rules (min_conf={}%)".format(str(int(round(min_conf*100))))
-    rules = apriori.filter_by_conf()
-    print rule_header
-    print rules
-
-    # write to "example-run.txt"
-    with open("example-run.txt", "w") as file:
-        file.write(association_header)
-        file.write("\n")
-        for association in associations:
-            file.write(association)
-            file.write("\n")
-        file.write(rule_header)
-        file.write("\n")
-        for rule in rules:
-            file.write(rule)
-            file.write("\n")
+    apriori.print_tuples()
+    apriori.print_rules()
 
 
 if __name__ == '__main__':
