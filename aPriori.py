@@ -9,8 +9,7 @@ class aPriori(object):
         self.minsupp = minsupp
         self.supp_table = {}
         self.generate_tuples()
-        # self.print_tuples()
-        # self.filter_by_conf()
+        self.filter_by_conf()
 
     def supp(self, c):
         if c in self.supp_table:
@@ -77,8 +76,9 @@ class aPriori(object):
                     res.append(c)
                     Lkp1.add(c)
             Lk = Lkp1
-
-        self.supportive_tuples = res
+        final_res = sorted(res, key= lambda x : (-self.supp(x), x))
+        # print 'res:', final_res
+        self.supportive_tuples = final_res
 
     def generate_C1(self, ItemSet):
         C1 = set()
@@ -101,65 +101,47 @@ class aPriori(object):
         return Ckp1
 
     def print_tuples(self):
+        print '==Frequent itemsets (min_sup =', str(self.minsupp) + ')'
+        print self.supportive_tuples
         for tup in self.supportive_tuples:
-            print tup, "supp:", self.supp(tup)
+            tmp_itemset = ', '.join(tup)
+            print "[{}], {}".format(tmp_itemset, "{0:g}%".format(self.supp(tup)*100))
+            # print "--[{}], {}".format(tmp_itemset, "{0:.0f}%".format(self.supp(tup)*100))
 
-    def get_tuples_string(self):
-        res = []
-        for tup in self.supportive_tuples:
-            items_str = "["
-            i = 0
-            for item in tup:
-                if i == 0:
-                    items_str += item
-                else :
-                    items_str += ("," + item)
-                i += 1
-            items_str += ("], " + str(int(round(self.supp(tup) * 100))) + "%")
-            res.append(items_str)
-        return res
+    def print_rules(self):
+        print '==High-confidence association rules (min_conf =', str(self.minconf) + ')'
+        res_rules = sorted(self.rules_list, key = lambda x : (-x[1], x[0]))
+        print res_rules
+        for rule in res_rules:
+            print "{} (Conf: {}, Supp: {})".format(rule[0],  "{0:g}%".format(rule[1]*100), "{0:g}%".format(rule[2]*100))
 
 
     def filter_by_conf(self):
         """
         compute conf
         """
-        rule_strs = []
+        ## rule_strs = []
+
+        self.rules_list = []
         for tup in self.supportive_tuples:
             size = len(tup)
 
             if size > 1:
-                for i in range(1, size):
-                    # LHS of size i
-                    LHSs_size_i = combinations(tup, i)
-                    for LHS in LHSs_size_i:
-                        RHS = tuple(sorted(set(tup) - set(LHS)))
-                        confidence = self.conf(LHS, tup)
-                        if confidence >= self.minconf:
-                            # print "{} => {}: conf = {}".format(LHS, RHS, confidence)
-                            left = "["
-                            i = 0
-                            for item in LHS:
-                                if i == 0:
-                                    left += item
-                                else :
-                                    left += "," + item
-                                i += 1
-                            left += "]"
-                            right = "["
-                            i = 0
-                            for item in RHS:
-                                if i == 0:
-                                    right += item
-                                else :
-                                    right += "," + item
-                                i += 1
-                            right += "]"
-                            rule_strs.append("{} => {} (Conf: {}%, Supp: {}%)".format(left, right, str(int(round(confidence*100))), str(int(round(self.supp(tup)*100)))))
-
-        return rule_strs
-
-
+                # LHS size
+                # only have one item on the right side
+                LHSs_size = combinations(tup, size-1)
+                for LHS in LHSs_size:
+                    RHS = tuple(sorted(set(tup) - set(LHS)))
+                    confidence = self.conf(LHS, tup)
+                    supp = self.supp(tup)
+                    if confidence >= self.minconf:
+                        # print "{} => {} conf = {}".format(LHS, RHS, confidence)
+                        LHS_str = ', '.join(LHS)
+                        cur_rule = "[{}] => [{}]".format(LHS_str, RHS[0])
+                        self.rules_list.append([cur_rule, confidence, supp])
+        # print self.rules_list
+        # print "[{}] => [{}] (Conf: {}, Supp: {})".format(LHS_str, RHS[0], confidence, supp)
+        # self.print_rules();
 
 def main():
     baskets = []
@@ -168,9 +150,9 @@ def main():
     baskets.append(["pen", "diary"])
     baskets.append(["pen", "ink", "soap"])
 
-    apriori = aPriori(baskets, 0.7, 0.8)
-    print apriori.get_tuples_string()
-    print apriori.filter_by_conf()
+    apriori = aPriori(baskets, 0.75, 0.8)
+    print apriori.print_tuples()
+    print apriori.print_rules()
 
 
 if __name__ == '__main__':
