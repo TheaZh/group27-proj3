@@ -102,7 +102,7 @@ class aPriori(object):
 
     def print_tuples(self):
         print '==Frequent itemsets (min_sup =', str(self.minsupp) + ')'
-        print self.supportive_tuples
+        # print self.supportive_tuples
         for tup in self.supportive_tuples:
             tmp_itemset = ', '.join(tup)
             print "[{}], {}".format(tmp_itemset, "{0:g}%".format(self.supp(tup)*100))
@@ -111,7 +111,7 @@ class aPriori(object):
     def print_rules(self):
         print '==High-confidence association rules (min_conf =', str(self.minconf) + ')'
         res_rules = sorted(self.rules_list, key = lambda x : (-x[1], x[0]))
-        print res_rules
+        # print res_rules
         for rule in res_rules:
             print "{} (Conf: {}, Supp: {})".format(rule[0],  "{0:g}%".format(rule[1]*100), "{0:g}%".format(rule[2]*100))
 
