@@ -49,7 +49,8 @@ Description
 2. Map the original NYC Open Data data set into our INTEGRATED-DATASET file
 	
 	* We use progreSQL to store all data in a SQL table (i.e. talbe 'table311'). The table contains all attributes of the dataset.
-	```sql
+	
+	  ```sql
 		create table table311 (
 			Unique_Key int ,
 			Created_Date date ,
@@ -105,39 +106,41 @@ Description
 			Longitude real ,
 			Location text  
 		);
-	```
+	  ```
 	
-	  Command Line:
-
-		\copy table311 FROM '/Users/peter/Study/17Fall/6111/project3/311_Service_Requests_from_2015.csv'  DELIMITER ',' CSV HEADER
-	
-	* Then we create a new table (i.e. table 'table311small') where we select several attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', 'Community_Board') that we need. 
-	
-	SQL
-
-	```sql
-	create table table311small (
-		Unique_Key int ,
-		Created_Date date ,
-		Complaint_Type text ,
-		Descriptor text ,
-		Community_Board text  
-	);
-	```
-		
 	Command Line
 	
-	```
-	\copy (Select Unique_Key, Created_Date, Complaint_Type, Descriptor, Community_Board From table311) To '/Users/peter/Study/17Fall/6111/project3/311_2015_tmp.csv' With CSV HEADER;
-	\copy table311small FROM '/Users/peter/Study/17Fall/6111/project3/311_2015_tmp.csv'  DELIMITER ',' CSV HEADER
-	```
+	  ```
+	  \copy table311 FROM '/Users/peter/Study/17Fall/6111/project3/311_Service_Requests_from_2015.csv'  DELIMITER ',' CSV HEADER
+	  ```
+	
+	* We create a new table (i.e. table 'table311small') where we select several attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', 'Community_Board') that we need. 
+	
+	  SQL
 
-	And then, we eliminate records whose 'Community Board' is '0 Unspecified'.
+	  ```sql
+	  create table table311small (
+	  	Unique_Key int ,
+	  	Created_Date date ,
+	  	Complaint_Type text ,
+	  	Descriptor text ,
+	  	Community_Board text  
+	  );
+	  ```
+		
+	  Command Line
+	
+	  ```
+	  \copy (Select Unique_Key, Created_Date, Complaint_Type, Descriptor, Community_Board From table311) To '/Users/peter/Study/17Fall/6111/project3/311_2015_tmp.csv' With CSV HEADER;
+	  \copy table311small FROM '/Users/peter/Study/17Fall/6111/project3/311_2015_tmp.csv'  DELIMITER ',' CSV HEADER
+	  ```
 
-	```
-	DELETE FROM table311small where Community_Board = '0 Unspecified';
-	DELETE FROM table311small where Complaint_Type = 'Missed Collection (All Materials)';
-	```
+	  And then, we eliminate records whose 'Community Board' is '0 Unspecified' or 'Complaint_Type' is 'Missed Collection (All Materials)'.
+
+	  ```
+	  DELETE FROM table311small where Community_Board = '0 Unspecified';
+	  DELETE FROM table311small where Complaint_Type = 'Missed Collection (All Materials)';
+	  ```
 	
 	* Generate 'item's and 'Market Busket'.
 	
@@ -145,10 +148,7 @@ Description
 	
 	* Store all 'market busket's in the INTEGRATED-DATASET.csv file 
 	
-	 Run
-	```
-	python clean.py
-	```
+	  Run```python clean.py```
 	
 3. INTEGRATED-DATASET file 
 
