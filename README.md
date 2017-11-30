@@ -44,23 +44,19 @@ Description
 ---------
 1. The data set
 
-	We use the [311 Service Requests From 2015][https://data.cityofnewyork.us/dataset/311-Service-Requests-From-2015/57g5-etyj] dataset.
+	We use the [311 Service Requests From 2015](https://data.cityofnewyork.us/dataset/311-Service-Requests-From-2015/57g5-etyj) dataset.
 
 2. Map the original NYC Open Data data set into our INTEGRATED-DATASET file
-
-	a. We use progreSQL to store all data in a SQL table (i.e. talbe 'table311'). 
 	
-	b. Then we create a new table (i.e. table 'table311small') where we select several attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', 'Community_Board') that we need.
+	* We use progreSQL to store all data in a SQL table (i.e. talbe 'table311'). 
 	
-	c. In this table, we eliminate records whose 'Community Board' is '0 Unspecified';
+	* Then we create a new table (i.e. table 'table311small') where we select several attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', 'Community_Board') that we need. And then, we eliminate records whose 'Community Board' is '0 Unspecified';
 	
-	d. Generate 'item's and 'Market Busket'.
+	* Generate 'item's and 'Market Busket'.
 	
-	An 'item' is generated as a format of 'Complaint_Type(Descriptor)'.
+	  An 'item' is generated as a format of 'Complaint_Type(Descriptor)'. A 'market busket' is consisted of all complaints that happend at the same community in the same day. That is, let (Created_Date, Community_Board) as the 'transaction id', and the items in this 'transaction' are 'Complaint_Type(Descriptor)'s with the same 'Created_Date' and 'Community_Board'.
 	
-	A 'market busket' is consisted of all complaints that happend at the same community in the same day. That is, let (Created_Date, Community_Board) as the 'transaction id', and the items in this 'transaction' are 'Complaint_Type(Descriptor)'s with the same 'Created_Date' and 'Community_Board'.
-	
-	e. Store all 'market busket's in the INTEGRATED-DATASET.csv file 
+	* Store all 'market busket's in the INTEGRATED-DATASET.csv file 
 	
 	
 3. INTEGRATED-DATASET file 
