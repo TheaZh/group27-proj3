@@ -1,9 +1,9 @@
-# COMS6111 Project 2
-COMS6111 Project 2
+# COMS6111 Project 3
+COMS6111 Project 3
 
 Group Name
 --------
-Project 2 Group 27
+Project 3 Group 27
 
 Group Member
 --------
@@ -44,8 +44,24 @@ Description
 ---------
 1. The data set
 
+	We use the <b>(311 Service Requests From 2015)[https://data.cityofnewyork.us/dataset/311-Service-Requests-From-2015/57g5-etyj]</b> dataset.
+
 2. Map the original NYC Open Data data set into our INTEGRATED-DATASET file
 
+	1. We use progreSQL to store all data in a SQL table (table311). 
+	
+	2. Then we create a new table (table311small) where we select several attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', Community_Board') that we need.
+	
+	3. In this table, we eliminate records whose 'Community Board' is '0 Unspecified';
+	
+	4. Generate 'item's and 'Market Busket'.
+	An 'item' is generated as a format of 'Compaint_Type(Descriptor)'.
+	A 'market busket' is consisted of all complaints that happend at the same community in the same day.
+	A 'market busket' is consisted of all 'Complaint_Type(Descriptor)' that happened in the same 'Community_Board' at the same 'Created_Date'.
+	
+	5. Store all 'market busket's in the INTEGRATED-DATASET.csv file 
+	
+	
 3. INTEGRATED-DATASET file 
 
 
