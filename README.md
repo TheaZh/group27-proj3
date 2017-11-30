@@ -48,21 +48,19 @@ Description
 
 2. Map the original NYC Open Data data set into our INTEGRATED-DATASET file
 
-	1. We use progreSQL to store all data in a SQL table (i.e. talbe 'table311'). 
+	a. We use progreSQL to store all data in a SQL table (i.e. talbe 'table311'). 
 	
-	2. Then we create a new table (i.e. table 'table311small') where we select several attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', Community_Board') that we need.
+	b. Then we create a new table (i.e. table 'table311small') where we select several attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', 'Community_Board') that we need.
 	
-	3. In this table, we eliminate records whose 'Community Board' is '0 Unspecified';
+	c. In this table, we eliminate records whose 'Community Board' is '0 Unspecified';
 	
-	4. Generate 'item's and 'Market Busket'.
+	d. Generate 'item's and 'Market Busket'.
 	
-	An 'item' is generated as a format of 'Compaint_Type(Descriptor)'.
+	An 'item' is generated as a format of 'Complaint_Type(Descriptor)'.
 	
-	A 'market busket' is consisted of all complaints that happend at the same community in the same day.
+	A 'market busket' is consisted of all complaints that happend at the same community in the same day. That is, let (Created_Date, Community_Board) as the 'transaction id', and the items in this 'transaction' are 'Complaint_Type(Descriptor)'s with the same 'Created_Date' and 'Community_Board'.
 	
-	A 'market busket' is consisted of all 'Complaint_Type(Descriptor)' that happened in the same 'Community_Board' at the same 'Created_Date'.
-	
-	5. Store all 'market busket's in the INTEGRATED-DATASET.csv file 
+	e. Store all 'market busket's in the INTEGRATED-DATASET.csv file 
 	
 	
 3. INTEGRATED-DATASET file 
