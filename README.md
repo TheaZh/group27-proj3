@@ -108,7 +108,7 @@ Description
 		);
 	  ```
 	
-	Command Line
+	  Command Line
 	
 	  ```
 	  \copy table311 FROM '/Users/peter/Study/17Fall/6111/project3/311_Service_Requests_from_2015.csv'  DELIMITER ',' CSV HEADER
@@ -141,16 +141,20 @@ Description
 	  DELETE FROM table311small where Community_Board = '0 Unspecified';
 	  DELETE FROM table311small where Complaint_Type = 'Missed Collection (All Materials)';
 	  ```
+	  Do deduplication and sort the record. Output the talbe into a new csv file in order to generate 'item' and 'market busket'
+	  ```
+	  \copy (Select distinct community_board, created_date, complaint_type, Descriptor From table311small Order By community_board, created_date, complaint_type, Descriptor) To '/Users/peter/Study/17Fall/6111/project3/311_2015_remove2.csv' With CSV HEADER;
+	  ```
 	
-	* Generate 'item's and 'Market Busket'.
+	* Generate the INTEGRATED-DATASET.csv file 
 	
 	  An 'item' is generated as a format of 'Complaint_Type(Descriptor)'. A 'market busket' is consisted of all complaints that happend at the same community in the same day. That is, let (Created_Date, Community_Board) as the 'transaction id', and the items in this 'transaction' are 'Complaint_Type(Descriptor)'s with the same 'Created_Date' and 'Community_Board'.
 	
-	* Store all 'market busket's in the INTEGRATED-DATASET.csv file 
-	
-	  Run```python clean.py```
+	  To generate the INTEGRATED-DATASET.csv file, run ```python clean.py```
 	
 3. INTEGRATED-DATASET file 
+	
+	We believe complaints happened in a community at one day are most likely related with each other. And this is also the reason why we consider ('Community_Board', 'Created_Date') as the 'transaction id' to generate 'market busket'.
 
 
 Internal Design
@@ -159,6 +163,26 @@ Internal Design
 
 Command Line Specification
 ---------
+The parameter value we choose are min_Supp = 0.35,  min_Conf = 0.82
+  ```
+  python app.py INTEGRATED-DATASET.csv 0.35 0.82
+  ```
+And here are some typical rules that we got.
+
+  1. \[blocked driveway(no access), noise - residential(banging/pounding)] => \[noise - residential(loud music/party)] (Conf: 90.1384%, Supp: 49.5273%)
+  
+  2. \[noise - residential(banging/pounding)] => \[noise - residential(loud music/party)] (Conf: 89.8577%, Supp: 61.7281%)
+
+  3. \[illegal parking(posted parking sign violation), noise - residential(banging/pounding)] => \[noise - residential(loud music/party)] (Conf: 88.641%, Supp: 36.6024%)
+  
+  4. \[blocked driveway(no access)] => \[noise - residential(loud music/party)] (Conf: 87.9943%, Supp: 59.9702%)
+
+  5. \[sanitation condition(15 street cond/dump-out/drop-off)] => \[blocked driveway(no access)] (Conf: 82.1097%, Supp: 38.1069%)
+
+
+
+
+
 
 Original dataset: https://data.cityofnewyork.us/dataset/311-Service-Requests-From-2015/57g5-etyj
 
