@@ -44,7 +44,7 @@ Description
 ---------
 1. The data set
 
-	We use the <b>(311 Service Requests From 2015)[https://data.cityofnewyork.us/dataset/311-Service-Requests-From-2015/57g5-etyj]</b> dataset.
+	We use the [311 Service Requests From 2015][https://data.cityofnewyork.us/dataset/311-Service-Requests-From-2015/57g5-etyj] dataset.
 
 2. Map the original NYC Open Data data set into our INTEGRATED-DATASET file
 
