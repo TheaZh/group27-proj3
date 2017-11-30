@@ -55,8 +55,11 @@ Description
 	3. In this table, we eliminate records whose 'Community Board' is '0 Unspecified';
 	
 	4. Generate 'item's and 'Market Busket'.
+	
 	An 'item' is generated as a format of 'Compaint_Type(Descriptor)'.
+	
 	A 'market busket' is consisted of all complaints that happend at the same community in the same day.
+	
 	A 'market busket' is consisted of all 'Complaint_Type(Descriptor)' that happened in the same 'Community_Board' at the same 'Created_Date'.
 	
 	5. Store all 'market busket's in the INTEGRATED-DATASET.csv file 
