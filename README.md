@@ -48,9 +48,9 @@ Description
 
 2. Map the original NYC Open Data data set into our INTEGRATED-DATASET file
 
-	1. We use progreSQL to store all data in a SQL table (table311). 
+	1. We use progreSQL to store all data in a SQL table (i.e. talbe 'table311'). 
 	
-	2. Then we create a new table (table311small) where we select several attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', Community_Board') that we need.
+	2. Then we create a new table (i.e. table 'table311small') where we select several attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', Community_Board') that we need.
 	
 	3. In this table, we eliminate records whose 'Community Board' is '0 Unspecified';
 	
