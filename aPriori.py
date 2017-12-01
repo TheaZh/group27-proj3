@@ -100,21 +100,34 @@ class aPriori(object):
                         Ckp1.add(tuple(sorted(p + (q_k,))))
         return Ckp1
 
-    def print_tuples(self):
+    def print_tuples(self, output_file):
+        tmp_line = '==Frequent itemsets (min_sup = '+str(self.minsupp) + ')'
+        self.write_output_file(output_file, tmp_line)
         print '==Frequent itemsets (min_sup =', str(self.minsupp) + ')'
         # print self.supportive_tuples
         for tup in self.supportive_tuples:
             tmp_itemset = ', '.join(tup)
             print "[{}], {}".format(tmp_itemset, "{0:g}%".format(self.supp(tup)*100))
+            tmp_line = str("[{}], {}".format(tmp_itemset, "{0:g}%".format(self.supp(tup)*100)))
+            self.write_output_file(output_file, tmp_line)
+            # output_file.write(tmp_line)
             # print "--[{}], {}".format(tmp_itemset, "{0:.0f}%".format(self.supp(tup)*100))
 
-    def print_rules(self):
+    def print_rules(self, output_file):
         print '==High-confidence association rules (min_conf =', str(self.minconf) + ')'
+        tmp_line = '\n==High-confidence association rules (min_conf = '+ str(self.minconf) + ')'
+        self.write_output_file(output_file, tmp_line)
         res_rules = sorted(self.rules_list, key = lambda x : (-x[1], x[0]))
         # print res_rules
         for rule in res_rules:
             print "{} (Conf: {}, Supp: {})".format(rule[0],  "{0:g}%".format(rule[1]*100), "{0:g}%".format(rule[2]*100))
+            tmp_line = str("{} (Conf: {}, Supp: {})".format(rule[0],  "{0:g}%".format(rule[1]*100), "{0:g}%".format(rule[2]*100)))
+            self.write_output_file(output_file, tmp_line)
+            # output_file.write(tmp_line)
 
+    def write_output_file(self,output_file, str_line):
+        output_file.write(str_line)
+        output_file.write("\n")
 
     def filter_by_conf(self):
         """
@@ -149,10 +162,10 @@ def main():
     baskets.append(["pen", "ink", "diary"])
     baskets.append(["pen", "diary"])
     baskets.append(["pen", "ink", "soap"])
-
+    output_test = open('output_test.txt', 'w')
     apriori = aPriori(baskets, 0.75, 0.8)
-    apriori.print_tuples()
-    apriori.print_rules()
+    apriori.print_tuples(output_test)
+    apriori.print_rules(output_test)
 
 
 if __name__ == '__main__':

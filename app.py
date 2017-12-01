@@ -5,8 +5,9 @@ import sys
 def main(filename, min_supp, min_conf):
     baskets = read(filename, 30000) # read such number of lines
     apriori = aPriori(baskets, min_supp, min_conf)
-    apriori.print_tuples()
-    apriori.print_rules()
+    output_file = open('output.txt', 'w')
+    apriori.print_tuples(output_file)
+    apriori.print_rules(output_file)
 
 
 if __name__ == '__main__':
