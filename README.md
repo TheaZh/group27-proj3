@@ -162,11 +162,14 @@ Internal Design
 
 1. Get the support of itemsets
 
-	We have a dictionary to store itemset and its support value. When we call the supp(itemset) function, if the itemset has already been in the dictionary, we return the value. If it hasn't, we calculate the support value, add them into the support dictionary, and then return the value.
+	We have a dictionary to store itemset and its support value. When we call the ```supp(itemset)``` function, if the itemset has already been in the dictionary, we return the value. If it hasn't, we calculate the support value, add them into the support dictionary, and then return the value.
 	
 2. Itemsets
+
+	<b> Generate Itemsets </b>
 	
-	Tuples (i.e. itemsets) whose support is greater than or equal to min_supp are stored in a list. And we sort the list according to their support value in descending order.
+* Store Itemsets  
+  Tuples (i.e. itemsets) whose support is greater than or equal to min_supp are stored in a list. And we sort the list according to their support value in descending order.
 
 3. Association Rules
 
