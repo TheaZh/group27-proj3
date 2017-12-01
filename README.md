@@ -13,7 +13,15 @@ Group Member
    
 Files
 --------
-	file-tree
+	./group27-proj3/
+	├── 311_2015.csv
+	├── INTEGRATED-DATASET.csv
+	├── README.md
+	├── aPriori.py
+	├── app.py
+	├── clean.py
+	├── output.txt
+	└── read_file.py
 
 Run
 --------
@@ -30,13 +38,8 @@ Run
 2. Navigate to folder
 
 		cd ./group27-proj3
-
-3. Install dependencies
-
-		sudo apt install python-pip
-		sudo pip install -r requirements.txt
 		
-4. Run program
+3. Run program
 		
 		python app.py INTEGRATED-DATASET.csv [min_supp] [min_conf]
 		
@@ -44,11 +47,11 @@ Description
 ---------
 1. The data set
 
-	We use the [311 Service Requests From 2015](https://data.cityofnewyork.us/dataset/311-Service-Requests-From-2015/57g5-etyj) dataset.
+	We use the [311 Service Requests From 2015](https://data.cityofnewyork.us/dataset/311-Service-Requests-From-2015/57g5-etyj) dataset. It contains information of 311 complaint service records, including complaint types, date, communities and other details.
 
 2. Map the original NYC Open Data data set into our INTEGRATED-DATASET file
 	
-	* We use postgreSQL to store all data in a SQL table (i.e. talbe 'table311'). The table contains all attributes of the dataset.
+	* After downloading the data csv file, we use postgreSQL to store all data in a SQL table (i.e. talbe 'table311'). The table contains all attributes of the dataset.
 	
 	  ```sql
 		create table table311 (
@@ -134,7 +137,7 @@ Description
 	  Create a new csv file (311_2015.csv) to store data from small311 table without duplicate records.
 	  
 	  ```
-	  \copy (SELECT DISTINCT Community_Board, Created_Date, Complaint_Type, Descriptor FROM small311 order by Community_Board, Created_Date, Complaint_Type, Descriptor) To 'path/to/311_2015.csv' With CSV HEADER
+	  COPY (SELECT DISTINCT Community_Board, Created_Date, Complaint_Type, Descriptor FROM small311 order by Community_Board, Created_Date, Complaint_Type, Descriptor) To 'path/to/group27-proj3/311_2015.csv' With CSV HEADER
 	  ```
 	
 	* Generate the INTEGRATED-DATASET.csv file 
@@ -174,14 +177,17 @@ The parameter value we choose are min_Supp = 0.35,  min_Conf = 0.82
   ```
   python app.py INTEGRATED-DATASET.csv 0.35 0.82
   ```
-And here are some typical rules we got.
+And here is a small part of result we got.
 
-  1. \[blocked driveway(no access), noise - residential(banging/pounding)] => \[noise - residential(loud music/party)] (Conf: 90.1384%, Supp: 49.5273%)
+  1. \[noise - street/sidewalk(loud music/party)] => \[noise - residential(loud music/party)] (Conf: 92.3019%, Supp: 37.4257%)
+  2. \[noise - residential(loud talking)] => \[noise - residential(loud music/party)] (Conf: 92.1059%, Supp: 35.203%)
+  3. \[noise - residential(banging/pounding)] => \[noise - residential(loud music/party)] (Conf: 89.8577%, Supp: 66.616%)
+  4. \[heat/hot water(apartment only)] => \[noise - residential(loud music/party)] (Conf: 89.4235%, Supp: 54.5431%)
+  5. \[derelict vehicle(with license plate)] => \[blocked driveway(no access)] (Conf: 89.0963%, Supp: 36.679%) 
+  6. \[illegal parking(posted parking sign violation)] => \[noise - residential(loud music/party)] (Conf: 85.711%, Supp: 48.5392%)
+  7. \[sanitation condition(15 street cond/dump-out/drop-off)] => \[blocked driveway(no access)] (Conf: 82.1169%, Supp: 41.1244%)
   
-  2. \[noise - residential(banging/pounding)] => \[noise - residential(loud music/party)] (Conf: 89.8577%, Supp: 61.7281%)
-
-  3. \[illegal parking(posted parking sign violation), noise - residential(banging/pounding)] => \[noise - residential(loud music/party)] (Conf: 88.641%, Supp: 36.6024%)
+Our result is close to real situation. For example, combining results with the actual situation, if people invite their friends to have a party at home, it's much likely that the music or their talking is loud. And host's friends who drive to the party may park their cars illegally. So when complaint about illegal parking or derelict vehicle happen, there are great possibilities that residents are having noisy parties in their house at the same community.
   
-  4. \[blocked driveway(no access)] => \[noise - residential(loud music/party)] (Conf: 87.9943%, Supp: 59.9702%)
+What surprises us is the rule '\[heat/hot water(apartment only)] => \[noise - residential(loud music/party)]' which has great confidence and support value. We guess that an apartment that often has heat/hot water problem may have poor facility condition, and this leads to the poor sound isolation of walls, which makes noise problem much more serious.
 
-  5. \[sanitation condition(15 street cond/dump-out/drop-off)] => \[blocked driveway(no access)] (Conf: 82.1097%, Supp: 38.1069%)
