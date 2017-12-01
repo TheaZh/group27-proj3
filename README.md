@@ -48,7 +48,7 @@ Description
 
 2. Map the original NYC Open Data data set into our INTEGRATED-DATASET file
 	
-	* We use progreSQL to store all data in a SQL table (i.e. talbe 'table311'). The table contains all attributes of the dataset.
+	* We use postgreSQL to store all data in a SQL table (i.e. talbe 'table311'). The table contains all attributes of the dataset.
 	
 	  ```sql
 		create table table311 (
