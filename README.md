@@ -56,7 +56,7 @@ Description
 
 2. Map the original NYC Open Data data set into our INTEGRATED-DATASET file
 	
-	* We use postgreSQL to store all data in a SQL table (i.e. talbe 'table311'). The table contains all attributes of the dataset.
+	* After downloading the data csv file, we use postgreSQL to store all data in a SQL table (i.e. talbe 'table311'). The table contains all attributes of the dataset.
 	
 	  ```sql
 		create table table311 (
@@ -142,7 +142,7 @@ Description
 	  Create a new csv file (311_2015.csv) to store data from small311 table without duplicate records.
 	  
 	  ```
-	  \copy (SELECT DISTINCT Community_Board, Created_Date, Complaint_Type, Descriptor FROM small311 order by Community_Board, Created_Date, Complaint_Type, Descriptor) To 'path/to/311_2015.csv' With CSV HEADER
+	  COPY (SELECT DISTINCT Community_Board, Created_Date, Complaint_Type, Descriptor FROM small311 order by Community_Board, Created_Date, Complaint_Type, Descriptor) To 'path/to/group27-proj3/311_2015.csv' With CSV HEADER
 	  ```
 	
 	* Generate the INTEGRATED-DATASET.csv file 
