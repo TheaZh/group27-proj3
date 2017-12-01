@@ -114,36 +114,27 @@ Description
 	  \copy table311 FROM '/Users/peter/Study/17Fall/6111/project3/311_Service_Requests_from_2015.csv'  DELIMITER ',' CSV HEADER
 	  ```
 	
-	* We create a new table (i.e. table 'table311small') where we select several attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', 'Community_Board') that we need. 
+	* We create a new table (i.e. table 'small311') where we select attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', 'Community_Board') that we need without duplicate records. 
 	
 	  SQL
 
 	  ```sql
-	  create table table311small (
-	  	Unique_Key int ,
-	  	Created_Date date ,
-	  	Complaint_Type text ,
-	  	Descriptor text ,
-	  	Community_Board text  
-	  );
-	  ```
-		
-	  Command Line
-	
-	  ```
-	  \copy (Select Unique_Key, Created_Date, Complaint_Type, Descriptor, Community_Board From table311) To '/Users/peter/Study/17Fall/6111/project3/311_2015_tmp.csv' With CSV HEADER;
-	  \copy table311small FROM '/Users/peter/Study/17Fall/6111/project3/311_2015_tmp.csv'  DELIMITER ',' CSV HEADER
+	  CREATE table small311
+	  AS
+	  SELECT Community_Board, Created_Date, Complaint_Type, Descriptor
+	  From table311;
 	  ```
 
-	  And then, we eliminate records whose 'Community Board' is '0 Unspecified' or 'Complaint_Type' is 'Missed Collection (All Materials)'.
+	  And then, we eliminate useless records whose 'Community Board' contains 'Unspecified' or 'Complaint_Type' is 'Missed Collection (All Materials)'.
 
 	  ```
-	  DELETE FROM table311small where Community_Board = '0 Unspecified';
-	  DELETE FROM table311small where Complaint_Type = 'Missed Collection (All Materials)';
+	  DELETE FROM small311 where Community_Board LIKE '%Unspecified%';
+	  DELETE FROM small311 where Complaint_Type = 'Missed Collection (All Materials)';
 	  ```
-	  Do deduplication and sort the record. Output the talbe into a new csv file in order to generate 'item' and 'market busket'
+	  Create a new csv file store data from table311small.
+	  
 	  ```
-	  \copy (Select distinct community_board, created_date, complaint_type, Descriptor From table311small Order By community_board, created_date, complaint_type, Descriptor) To '/Users/peter/Study/17Fall/6111/project3/311_2015_remove2.csv' With CSV HEADER;
+	 \copy (SELECT DISTINCT Community_Board, Created_Date, Complaint_Type, Descriptor FROM small311 order by Community_Board, Created_Date, Complaint_Type, Descriptor) To '/Users/peter/Study/17Fall/6111/project3/311_2015.csv' With CSV HEADER;
 	  ```
 	
 	* Generate the INTEGRATED-DATASET.csv file 
