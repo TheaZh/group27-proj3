@@ -1,0 +1,238 @@
+==Frequent itemsets (min_sup = 0.35)
+[noise - residential(loud music/party)], 81.311%
+[noise - residential(banging/pounding)], 74.135%
+[blocked driveway(no access)], 73.5489%
+[street condition(pothole)], 67.2542%
+[noise - residential(banging/pounding), noise - residential(loud music/party)], 66.616%
+[heat/hot water(entire building)], 66.3425%
+[blocked driveway(no access), noise - residential(loud music/party)], 64.7189%
+[heat/hot water(apartment only)], 60.9941%
+[blocked driveway(no access), noise - residential(banging/pounding)], 59.2967%
+[heat/hot water(entire building), noise - residential(loud music/party)], 59.1795%
+[noise - residential(loud music/party), street condition(pothole)], 56.7658%
+[illegal parking(posted parking sign violation)], 56.6312%
+[heat/hot water(entire building), noise - residential(banging/pounding)], 55.8237%
+[unsanitary condition(pests)], 54.5518%
+[heat/hot water(apartment only), noise - residential(loud music/party)], 54.5431%
+[street light condition(street light out)], 53.5533%
+[blocked driveway(no access), noise - residential(banging/pounding), noise - residential(loud music/party)], 53.4491%
+[blocked driveway(no access), street condition(pothole)], 53.0497%
+[blocked driveway(no access), heat/hot water(entire building)], 52.2075%
+[noise - residential(banging/pounding), street condition(pothole)], 52.0903%
+[heat/hot water(apartment only), heat/hot water(entire building)], 52.0773%
+[heat/hot water(apartment only), noise - residential(banging/pounding)], 50.8704%
+[heat/hot water(entire building), noise - residential(banging/pounding), noise - residential(loud music/party)], 50.7532%
+[sanitation condition(15 street cond/dump-out/drop-off)], 50.0803%
+[blocked driveway(partial access)], 49.4204%
+[noise - residential(loud music/party), unsanitary condition(pests)], 49.3336%
+[blocked driveway(no access), heat/hot water(apartment only)], 49.0384%
+[illegal parking(posted parking sign violation), noise - residential(loud music/party)], 48.5392%
+[paint/plaster(ceiling)], 48.4741%
+[paint/plaster(wall)], 47.4843%
+[unsanitary condition(mold)], 47.2194%
+[blocked driveway(no access), street light condition(street light out)], 47.1847%
+[heat/hot water(apartment only), heat/hot water(entire building), noise - residential(loud music/party)], 46.9286%
+[blocked driveway(no access), heat/hot water(entire building), noise - residential(loud music/party)], 46.7376%
+[heat/hot water(apartment only), noise - residential(banging/pounding), noise - residential(loud music/party)], 46.4641%
+[heat/hot water(entire building), street condition(pothole)], 46.1776%
+[noise - residential(banging/pounding), noise - residential(loud music/party), street condition(pothole)], 46.0082%
+[noise - commercial(loud music/party)], 45.8129%
+[blocked driveway(no access), noise - residential(loud music/party), street condition(pothole)], 45.7521%
+[noise - residential(banging/pounding), unsanitary condition(pests)], 45.7261%
+[blocked driveway(no access), blocked driveway(partial access)], 45.2746%
+[blocked driveway(no access), illegal parking(posted parking sign violation)], 45.1704%
+[noise - residential(loud music/party), street light condition(street light out)], 44.9446%
+[heat/hot water(apartment only), heat/hot water(entire building), noise - residential(banging/pounding)], 44.6755%
+[illegal parking(posted parking sign violation), noise - residential(banging/pounding)], 44.5626%
+[blocked driveway(no access), heat/hot water(entire building), noise - residential(banging/pounding)], 44.1632%
+[noise - residential(loud music/party), paint/plaster(ceiling)], 44.1502%
+[blocked driveway(no access), heat/hot water(apartment only), noise - residential(loud music/party)], 43.9679%
+[blocked driveway(no access), unsanitary condition(pests)], 43.7769%
+[noise - residential(loud music/party), sanitation condition(15 street cond/dump-out/drop-off)], 43.1821%
+[noise - residential(loud music/party), paint/plaster(wall)], 43.0909%
+[blocked driveway(partial access), noise - residential(loud music/party)], 42.8478%
+[heat/hot water(apartment only), street condition(pothole)], 42.8131%
+[illegal parking(blocked hydrant)], 42.6351%
+[illegal parking(posted parking sign violation), street condition(pothole)], 42.5222%
+[noise - residential(loud music/party), unsanitary condition(mold)], 42.5222%
+[blocked driveway(no access), noise - residential(banging/pounding), street condition(pothole)], 42.1836%
+[noise - residential(banging/pounding), noise - residential(loud music/party), unsanitary condition(pests)], 42.0577%
+[noise - commercial(loud music/party), noise - residential(loud music/party)], 41.6106%
+[blocked driveway(no access), heat/hot water(apartment only), heat/hot water(entire building)], 41.5368%
+[street condition(pothole), street light condition(street light out)], 41.463%
+[heat/hot water(entire building), unsanitary condition(pests)], 41.3805%
+[noise - residential(banging/pounding), paint/plaster(ceiling)], 41.2459%
+[derelict vehicle(with license plate)], 41.1678%
+[blocked driveway(no access), sanitation condition(15 street cond/dump-out/drop-off)], 41.1244%
+[blocked driveway(no access), heat/hot water(apartment only), noise - residential(banging/pounding)], 40.9681%
+[heat/hot water(apartment only), heat/hot water(entire building), noise - residential(banging/pounding), noise - residential(loud music/party)], 40.9117%
+[noise - residential(banging/pounding), street light condition(street light out)], 40.8986%
+[noise - street/sidewalk(loud music/party)], 40.547%
+[flooring/stairs(floor)], 40.4298%
+[heat/hot water(entire building), noise - residential(loud music/party), street condition(pothole)], 40.3647%
+[noise - residential(banging/pounding), paint/plaster(wall)], 40.2257%
+[blocked driveway(no access), heat/hot water(entire building), noise - residential(banging/pounding), noise - residential(loud music/party)], 40.1563%
+[blocked driveway(no access), noise - residential(loud music/party), street light condition(street light out)], 40.1172%
+[blocked driveway(partial access), noise - residential(banging/pounding)], 39.8003%
+[noise - residential(banging/pounding), unsanitary condition(mold)], 39.7743%
+[blocked driveway(no access), noise - residential(loud music/party), unsanitary condition(pests)], 39.6787%
+[illegal parking(posted parking sign violation), noise - residential(banging/pounding), noise - residential(loud music/party)], 39.5008%
+[blocked driveway(no access), blocked driveway(partial access), noise - residential(loud music/party)], 39.453%
+[building/use(illegal conversion of residential building/space)], 39.3271%
+[noise - residential(banging/pounding), sanitation condition(15 street cond/dump-out/drop-off)], 39.1448%
+[blocked driveway(no access), illegal parking(posted parking sign violation), noise - residential(loud music/party)], 39.1361%
+[blocked driveway(no access), paint/plaster(ceiling)], 39.0797%
+[heat/hot water(entire building), illegal parking(posted parking sign violation)], 38.524%
+[heat/hot water(entire building), noise - residential(banging/pounding), street condition(pothole)], 38.4849%
+[heat/hot water(entire building), paint/plaster(ceiling)], 38.3981%
+[noise - residential(loud talking)], 38.2201%
+[heat/hot water(apartment only), unsanitary condition(pests)], 38.1506%
+[illegal parking(blocked sidewalk)], 38.1506%
+[noise - street/sidewalk(loud talking)], 38.1203%
+[blocked driveway(no access), unsanitary condition(mold)], 38.1116%
+[blocked driveway(no access), paint/plaster(wall)], 38.0899%
+[noise - residential(banging/pounding), noise - residential(loud music/party), paint/plaster(ceiling)], 38.0899%
+[sanitation condition(15 street cond/dump-out/drop-off), street condition(pothole)], 38.0247%
+[heat/hot water(entire building), noise - residential(loud music/party), unsanitary condition(pests)], 37.8988%
+[door/window(door)], 37.8902%
+[street condition(pothole), unsanitary condition(pests)], 37.7816%
+[heat/hot water(apartment only), noise - residential(loud music/party), street condition(pothole)], 37.4691%
+[blocked driveway(no access), noise - residential(banging/pounding), noise - residential(loud music/party), street condition(pothole)], 37.4343%
+[noise - residential(loud music/party), noise - street/sidewalk(loud music/party)], 37.4257%
+[blocked driveway(no access), heat/hot water(apartment only), heat/hot water(entire building), noise - residential(loud music/party)], 37.417%
+[heat/hot water(entire building), paint/plaster(wall)], 37.4083%
+[blocked driveway(no access), heat/hot water(apartment only), noise - residential(banging/pounding), noise - residential(loud music/party)], 37.3953%
+[derelict vehicles(14 derelict vehicles)], 37.1652%
+[blocked driveway(partial access), street condition(pothole)], 37.0436%
+[noise - commercial(loud music/party), noise - residential(banging/pounding)], 37.0349%
+[noise - residential(banging/pounding), noise - residential(loud music/party), paint/plaster(wall)], 37.0046%
+[heat/hot water(entire building), unsanitary condition(mold)], 36.9221%
+[flooring/stairs(floor), noise - residential(loud music/party)], 36.8743%
+[blocked driveway(no access), noise - residential(banging/pounding), street light condition(street light out)], 36.8179%
+[blocked driveway(no access), street condition(pothole), street light condition(street light out)], 36.7745%
+[blocked driveway(no access), blocked driveway(partial access), noise - residential(banging/pounding)], 36.7397%
+[blocked driveway(no access), noise - residential(banging/pounding), unsanitary condition(pests)], 36.6963%
+[blocked driveway(no access), derelict vehicle(with license plate)], 36.679%
+[blocked driveway(no access), heat/hot water(entire building), street condition(pothole)], 36.6573%
+[paint/plaster(wall), unsanitary condition(pests)], 36.6486%
+[blocked driveway(no access), illegal parking(blocked hydrant)], 36.5748%
+[illegal parking(blocked hydrant), noise - residential(loud music/party)], 36.5531%
+[paint/plaster(ceiling), paint/plaster(wall)], 36.4966%
+[noise - residential(banging/pounding), noise - residential(loud music/party), unsanitary condition(mold)], 36.4228%
+[paint/plaster(ceiling), unsanitary condition(pests)], 36.2926%
+[blocked driveway(no access), illegal parking(posted parking sign violation), noise - residential(banging/pounding)], 36.1059%
+[heat/hot water(apartment only), heat/hot water(entire building), street condition(pothole)], 35.9844%
+[blocked driveway(no access), noise - residential(loud music/party), sanitation condition(15 street cond/dump-out/drop-off)], 35.8845%
+[illegal parking(posted parking sign violation), noise - residential(loud music/party), street condition(pothole)], 35.8802%
+[heat/hot water(entire building), noise - residential(banging/pounding), unsanitary condition(pests)], 35.8411%
+[heat/hot water(entire building), street light condition(street light out)], 35.789%
+[heat/hot water(apartment only), paint/plaster(ceiling)], 35.776%
+[heat/hot water(apartment only), illegal parking(posted parking sign violation)], 35.7065%
+[blocked driveway(no access), heat/hot water(apartment only), heat/hot water(entire building), noise - residential(banging/pounding)], 35.6458%
+[blocked driveway(no access), noise - residential(loud music/party), paint/plaster(ceiling)], 35.611%
+[unsanitary condition(mold), unsanitary condition(pests)], 35.6023%
+[noise - residential(banging/pounding), noise - residential(loud music/party), street light condition(street light out)], 35.5893%
+[water leak(heavy flow)], 35.4808%
+[heat/hot water(entire building), noise - residential(loud music/party), paint/plaster(ceiling)], 35.3462%
+[blocked driveway(partial access), noise - residential(banging/pounding), noise - residential(loud music/party)], 35.3245%
+[noise - residential(loud music/party), noise - residential(loud talking)], 35.203%
+[heat/hot water(apartment only), noise - residential(banging/pounding), street condition(pothole)], 35.1161%
+[heat/hot water(apartment only), noise - residential(loud music/party), unsanitary condition(pests)], 35.0944%
+[derelict vehicle(with license plate), noise - residential(loud music/party)], 35.0033%
+
+==High-confidence association rules (min_conf = 0.82)
+[noise - residential(banging/pounding), paint/plaster(ceiling)] => [noise - residential(loud music/party)] (Conf: 92.3482%, Supp: 38.0899%)
+[blocked driveway(partial access), noise - residential(banging/pounding)] => [blocked driveway(no access)] (Conf: 92.3102%, Supp: 36.7397%)
+[noise - street/sidewalk(loud music/party)] => [noise - residential(loud music/party)] (Conf: 92.3019%, Supp: 37.4257%)
+[noise - residential(loud talking)] => [noise - residential(loud music/party)] (Conf: 92.1059%, Supp: 35.203%)
+[blocked driveway(partial access), noise - residential(loud music/party)] => [blocked driveway(no access)] (Conf: 92.077%, Supp: 39.453%)
+[heat/hot water(entire building), paint/plaster(ceiling)] => [noise - residential(loud music/party)] (Conf: 92.052%, Supp: 35.3462%)
+[noise - residential(banging/pounding), paint/plaster(wall)] => [noise - residential(loud music/party)] (Conf: 91.9922%, Supp: 37.0046%)
+[heat/hot water(apartment only), unsanitary condition(pests)] => [noise - residential(loud music/party)] (Conf: 91.9891%, Supp: 35.0944%)
+[noise - residential(banging/pounding), unsanitary condition(pests)] => [noise - residential(loud music/party)] (Conf: 91.9776%, Supp: 42.0577%)
+[blocked driveway(partial access)] => [blocked driveway(no access)] (Conf: 91.611%, Supp: 45.2746%)
+[heat/hot water(entire building), unsanitary condition(pests)] => [noise - residential(loud music/party)] (Conf: 91.5862%, Supp: 37.8988%)
+[heat/hot water(apartment only), heat/hot water(entire building), noise - residential(banging/pounding)] => [noise - residential(loud music/party)] (Conf: 91.5752%, Supp: 40.9117%)
+[noise - residential(banging/pounding), unsanitary condition(mold)] => [noise - residential(loud music/party)] (Conf: 91.5739%, Supp: 36.4228%)
+[heat/hot water(apartment only), noise - residential(banging/pounding)] => [noise - residential(loud music/party)] (Conf: 91.3381%, Supp: 46.4641%)
+[blocked driveway(no access), heat/hot water(apartment only), noise - residential(banging/pounding)] => [noise - residential(loud music/party)] (Conf: 91.279%, Supp: 37.3953%)
+[flooring/stairs(floor)] => [noise - residential(loud music/party)] (Conf: 91.2058%, Supp: 36.8743%)
+[blocked driveway(no access), paint/plaster(ceiling)] => [noise - residential(loud music/party)] (Conf: 91.1242%, Supp: 35.611%)
+[paint/plaster(ceiling)] => [noise - residential(loud music/party)] (Conf: 91.0801%, Supp: 44.1502%)
+[blocked driveway(no access), heat/hot water(entire building), noise - residential(banging/pounding)] => [noise - residential(loud music/party)] (Conf: 90.927%, Supp: 40.1563%)
+[heat/hot water(entire building), noise - residential(banging/pounding)] => [noise - residential(loud music/party)] (Conf: 90.9169%, Supp: 50.7532%)
+[noise - commercial(loud music/party)] => [noise - residential(loud music/party)] (Conf: 90.8273%, Supp: 41.6106%)
+[paint/plaster(wall)] => [noise - residential(loud music/party)] (Conf: 90.7479%, Supp: 43.0909%)
+[blocked driveway(no access), unsanitary condition(pests)] => [noise - residential(loud music/party)] (Conf: 90.6386%, Supp: 39.6787%)
+[unsanitary condition(pests)] => [noise - residential(loud music/party)] (Conf: 90.4345%, Supp: 49.3336%)
+[blocked driveway(no access), noise - residential(banging/pounding)] => [noise - residential(loud music/party)] (Conf: 90.1384%, Supp: 53.4491%)
+[heat/hot water(apartment only), heat/hot water(entire building)] => [noise - residential(loud music/party)] (Conf: 90.1134%, Supp: 46.9286%)
+[blocked driveway(no access), heat/hot water(apartment only), heat/hot water(entire building)] => [noise - residential(loud music/party)] (Conf: 90.0815%, Supp: 37.417%)
+[unsanitary condition(mold)] => [noise - residential(loud music/party)] (Conf: 90.0524%, Supp: 42.5222%)
+[noise - residential(banging/pounding), street light condition(street light out)] => [blocked driveway(no access)] (Conf: 90.0223%, Supp: 36.8179%)
+[noise - residential(banging/pounding)] => [noise - residential(loud music/party)] (Conf: 89.8577%, Supp: 66.616%)
+[blocked driveway(no access), heat/hot water(apartment only)] => [noise - residential(loud music/party)] (Conf: 89.6601%, Supp: 43.9679%)
+[blocked driveway(no access), heat/hot water(entire building)] => [noise - residential(loud music/party)] (Conf: 89.5227%, Supp: 46.7376%)
+[heat/hot water(apartment only)] => [noise - residential(loud music/party)] (Conf: 89.4235%, Supp: 54.5431%)
+[noise - residential(loud music/party), street light condition(street light out)] => [blocked driveway(no access)] (Conf: 89.2592%, Supp: 40.1172%)
+[heat/hot water(entire building)] => [noise - residential(loud music/party)] (Conf: 89.203%, Supp: 59.1795%)
+[derelict vehicle(with license plate)] => [blocked driveway(no access)] (Conf: 89.0963%, Supp: 36.679%)
+[blocked driveway(partial access), noise - residential(banging/pounding)] => [noise - residential(loud music/party)] (Conf: 88.7544%, Supp: 35.3245%)
+[blocked driveway(no access), noise - residential(banging/pounding), street condition(pothole)] => [noise - residential(loud music/party)] (Conf: 88.7414%, Supp: 37.4343%)
+[street condition(pothole), street light condition(street light out)] => [blocked driveway(no access)] (Conf: 88.6923%, Supp: 36.7745%)
+[illegal parking(posted parking sign violation), noise - residential(banging/pounding)] => [noise - residential(loud music/party)] (Conf: 88.641%, Supp: 39.5008%)
+[noise - residential(banging/pounding), street condition(pothole)] => [noise - residential(loud music/party)] (Conf: 88.324%, Supp: 46.0082%)
+[street light condition(street light out)] => [blocked driveway(no access)] (Conf: 88.108%, Supp: 47.1847%)
+[heat/hot water(apartment only), noise - residential(banging/pounding), noise - residential(loud music/party)] => [heat/hot water(entire building)] (Conf: 88.0501%, Supp: 40.9117%)
+[blocked driveway(no access)] => [noise - residential(loud music/party)] (Conf: 87.9943%, Supp: 64.7189%)
+[heat/hot water(apartment only), noise - residential(banging/pounding)] => [heat/hot water(entire building)] (Conf: 87.8222%, Supp: 44.6755%)
+[heat/hot water(apartment only), street condition(pothole)] => [noise - residential(loud music/party)] (Conf: 87.5177%, Supp: 37.4691%)
+[heat/hot water(entire building), street condition(pothole)] => [noise - residential(loud music/party)] (Conf: 87.4119%, Supp: 40.3647%)
+[blocked driveway(no access), sanitation condition(15 street cond/dump-out/drop-off)] => [noise - residential(loud music/party)] (Conf: 87.2585%, Supp: 35.8845%)
+[heat/hot water(apartment only), heat/hot water(entire building), noise - residential(loud music/party)] => [noise - residential(banging/pounding)] (Conf: 87.1785%, Supp: 40.9117%)
+[blocked driveway(no access), blocked driveway(partial access)] => [noise - residential(loud music/party)] (Conf: 87.1416%, Supp: 39.453%)
+[noise - residential(banging/pounding), street light condition(street light out)] => [noise - residential(loud music/party)] (Conf: 87.0184%, Supp: 35.5893%)
+[blocked driveway(no access), heat/hot water(apartment only), noise - residential(banging/pounding)] => [heat/hot water(entire building)] (Conf: 87.0086%, Supp: 35.6458%)
+[blocked driveway(partial access)] => [noise - residential(loud music/party)] (Conf: 86.7006%, Supp: 42.8478%)
+[blocked driveway(no access), illegal parking(posted parking sign violation)] => [noise - residential(loud music/party)] (Conf: 86.641%, Supp: 39.1361%)
+[heat/hot water(entire building), unsanitary condition(pests)] => [noise - residential(banging/pounding)] (Conf: 86.6135%, Supp: 35.8411%)
+[noise - residential(loud music/party), paint/plaster(ceiling)] => [noise - residential(banging/pounding)] (Conf: 86.2734%, Supp: 38.0899%)
+[blocked driveway(no access), street condition(pothole)] => [noise - residential(loud music/party)] (Conf: 86.2439%, Supp: 45.7521%)
+[sanitation condition(15 street cond/dump-out/drop-off)] => [noise - residential(loud music/party)] (Conf: 86.2257%, Supp: 43.1821%)
+[heat/hot water(apartment only), noise - residential(loud music/party)] => [heat/hot water(entire building)] (Conf: 86.0395%, Supp: 46.9286%)
+[blocked driveway(no access), heat/hot water(entire building), noise - residential(loud music/party)] => [noise - residential(banging/pounding)] (Conf: 85.9186%, Supp: 40.1563%)
+[noise - residential(loud music/party), paint/plaster(wall)] => [noise - residential(banging/pounding)] (Conf: 85.8755%, Supp: 37.0046%)
+[blocked driveway(no access), heat/hot water(apartment only), heat/hot water(entire building)] => [noise - residential(banging/pounding)] (Conf: 85.8173%, Supp: 35.6458%)
+[heat/hot water(apartment only), heat/hot water(entire building)] => [noise - residential(banging/pounding)] (Conf: 85.7869%, Supp: 44.6755%)
+[illegal parking(blocked hydrant)] => [blocked driveway(no access)] (Conf: 85.7856%, Supp: 36.5748%)
+[heat/hot water(entire building), noise - residential(loud music/party)] => [noise - residential(banging/pounding)] (Conf: 85.7614%, Supp: 50.7532%)
+[illegal parking(blocked hydrant)] => [noise - residential(loud music/party)] (Conf: 85.7347%, Supp: 36.5531%)
+[illegal parking(posted parking sign violation)] => [noise - residential(loud music/party)] (Conf: 85.711%, Supp: 48.5392%)
+[noise - residential(loud music/party), unsanitary condition(mold)] => [noise - residential(banging/pounding)] (Conf: 85.6559%, Supp: 36.4228%)
+[heat/hot water(apartment only)] => [heat/hot water(entire building)] (Conf: 85.3808%, Supp: 52.0773%)
+[noise - residential(loud music/party), unsanitary condition(pests)] => [noise - residential(banging/pounding)] (Conf: 85.2517%, Supp: 42.0577%)
+[heat/hot water(apartment only), noise - residential(loud music/party)] => [noise - residential(banging/pounding)] (Conf: 85.1878%, Supp: 46.4641%)
+[blocked driveway(no access), heat/hot water(apartment only), noise - residential(loud music/party)] => [heat/hot water(entire building)] (Conf: 85.1007%, Supp: 37.417%)
+[paint/plaster(ceiling)] => [noise - residential(banging/pounding)] (Conf: 85.0887%, Supp: 41.2459%)
+[blocked driveway(no access), heat/hot water(apartment only), noise - residential(loud music/party)] => [noise - residential(banging/pounding)] (Conf: 85.0513%, Supp: 37.3953%)
+[derelict vehicle(with license plate)] => [noise - residential(loud music/party)] (Conf: 85.0258%, Supp: 35.0033%)
+[blocked driveway(no access), street light condition(street light out)] => [noise - residential(loud music/party)] (Conf: 85.0216%, Supp: 40.1172%)
+[paint/plaster(wall)] => [noise - residential(banging/pounding)] (Conf: 84.7138%, Supp: 40.2257%)
+[blocked driveway(no access), heat/hot water(apartment only)] => [heat/hot water(entire building)] (Conf: 84.7025%, Supp: 41.5368%)
+[blocked driveway(no access), heat/hot water(entire building)] => [noise - residential(banging/pounding)] (Conf: 84.5917%, Supp: 44.1632%)
+[street condition(pothole)] => [noise - residential(loud music/party)] (Conf: 84.4049%, Supp: 56.7658%)
+[illegal parking(posted parking sign violation), street condition(pothole)] => [noise - residential(loud music/party)] (Conf: 84.3798%, Supp: 35.8802%)
+[unsanitary condition(mold)] => [noise - residential(banging/pounding)] (Conf: 84.2328%, Supp: 39.7743%)
+[heat/hot water(entire building)] => [noise - residential(banging/pounding)] (Conf: 84.1447%, Supp: 55.8237%)
+[heat/hot water(apartment only), street condition(pothole)] => [heat/hot water(entire building)] (Conf: 84.0499%, Supp: 35.9844%)
+[street light condition(street light out)] => [noise - residential(loud music/party)] (Conf: 83.9251%, Supp: 44.9446%)
+[blocked driveway(no access), unsanitary condition(pests)] => [noise - residential(banging/pounding)] (Conf: 83.8259%, Supp: 36.6963%)
+[unsanitary condition(pests)] => [noise - residential(banging/pounding)] (Conf: 83.8214%, Supp: 45.7261%)
+[blocked driveway(no access), heat/hot water(apartment only)] => [noise - residential(banging/pounding)] (Conf: 83.5428%, Supp: 40.9681%)
+[heat/hot water(apartment only)] => [noise - residential(banging/pounding)] (Conf: 83.4021%, Supp: 50.8704%)
+[heat/hot water(entire building), street condition(pothole)] => [noise - residential(banging/pounding)] (Conf: 83.3412%, Supp: 38.4849%)
+[noise - residential(loud music/party), sanitation condition(15 street cond/dump-out/drop-off)] => [blocked driveway(no access)] (Conf: 83.1004%, Supp: 35.8845%)
+[blocked driveway(no access), noise - residential(loud music/party)] => [noise - residential(banging/pounding)] (Conf: 82.5865%, Supp: 53.4491%)
+[blocked driveway(partial access), noise - residential(loud music/party)] => [noise - residential(banging/pounding)] (Conf: 82.4417%, Supp: 35.3245%)
+[sanitation condition(15 street cond/dump-out/drop-off)] => [blocked driveway(no access)] (Conf: 82.1169%, Supp: 41.1244%)
+[heat/hot water(apartment only), street condition(pothole)] => [noise - residential(banging/pounding)] (Conf: 82.0219%, Supp: 35.1161%)
