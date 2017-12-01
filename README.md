@@ -20,7 +20,7 @@ Files
 	├── aPriori.py
 	├── app.py
 	├── clean.py
-	├── output.txt
+	├── example-run.txt
 	└── read_file.py
 
 Run
@@ -148,7 +148,7 @@ Description
 	
 3. INTEGRATED-DATASET file 
 	
-	We believe complaints happened in a community at one day are most likely related with each other. And this is also the reason why we consider ('Community_Board', 'Created_Date') as the 'transaction id' to generate 'market busket'.
+	We believe complaints happened in a community at one day are most likely related with each other. And this is also the reason why we consider ('Community_Board', 'Created_Date') as the 'transaction id' to generate 'market busket'. That is, all complaints happend on the same date in the same community are itemsets in one market busket.
 
 
 Internal Design
