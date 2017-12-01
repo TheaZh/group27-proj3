@@ -13,7 +13,15 @@ Group Member
    
 Files
 --------
-	file-tree
+	./group27-proj3/
+	├── 311_2015.csv
+	├── INTEGRATED-DATASET.csv
+	├── README.md
+	├── aPriori.py
+	├── app.py
+	├── clean.py
+	├── output.txt
+	└── read_file.py
 
 Run
 --------
