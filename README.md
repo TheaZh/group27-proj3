@@ -184,12 +184,11 @@ The parameter value we choose are min_Supp = 0.35,  min_Conf = 0.82
   ```
 And here are some typical rules we got.
 
-  1. \[blocked driveway(no access), noise - residential(banging/pounding)] => \[noise - residential(loud music/party)] (Conf: 90.1384%, Supp: 49.5273%)
-  
-  2. \[noise - residential(banging/pounding)] => \[noise - residential(loud music/party)] (Conf: 89.8577%, Supp: 61.7281%)
+  1. \[noise - street/sidewalk(loud music/party)] => \[noise - residential(loud music/party)] (Conf: 92.3019%, Supp: 37.4257%)
+  2. \[noise - residential(loud talking)] => \[noise - residential(loud music/party)] (Conf: 92.1059%, Supp: 35.203%)
+  3. \[noise - residential(banging/pounding)] => \[noise - residential(loud music/party)] (Conf: 89.8577%, Supp: 66.616%)
+  4. \[heat/hot water(apartment only)] => \[noise - residential(loud music/party)] (Conf: 89.4235%, Supp: 54.5431%)
+  5. \[derelict vehicle(with license plate)] => \[blocked driveway(no access)] (Conf: 89.0963%, Supp: 36.679%) 
+  6. \[illegal parking(posted parking sign violation)] => \[noise - residential(loud music/party)] (Conf: 85.711%, Supp: 48.5392%)
+  7. \[sanitation condition(15 street cond/dump-out/drop-off)] => \[blocked driveway(no access)] (Conf: 82.1169%, Supp: 41.1244%)
 
-  3. \[illegal parking(posted parking sign violation), noise - residential(banging/pounding)] => \[noise - residential(loud music/party)] (Conf: 88.641%, Supp: 36.6024%)
-  
-  4. \[blocked driveway(no access)] => \[noise - residential(loud music/party)] (Conf: 87.9943%, Supp: 59.9702%)
-
-  5. \[sanitation condition(15 street cond/dump-out/drop-off)] => \[blocked driveway(no access)] (Conf: 82.1097%, Supp: 38.1069%)
