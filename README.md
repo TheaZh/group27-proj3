@@ -134,7 +134,7 @@ Description
 	  Create a new csv file (311_2015.csv) to store data from small311 table without duplicate records.
 	  
 	  ```
-	 \copy (SELECT DISTINCT Community_Board, Created_Date, Complaint_Type, Descriptor FROM small311 order by Community_Board, Created_Date, Complaint_Type, Descriptor) To 'path/to/311_2015.csv' With CSV HEADER;
+	  \copy (SELECT DISTINCT Community_Board, Created_Date, Complaint_Type, Descriptor FROM small311 order by Community_Board, Created_Date, Complaint_Type, Descriptor) To 'path/to/311_2015.csv' With CSV HEADER
 	  ```
 	
 	* Generate the INTEGRATED-DATASET.csv file 
