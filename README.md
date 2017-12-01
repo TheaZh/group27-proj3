@@ -182,7 +182,7 @@ The parameter value we choose are min_Supp = 0.35,  min_Conf = 0.82
   ```
   python app.py INTEGRATED-DATASET.csv 0.35 0.82
   ```
-And here are some typical rules we got.
+And here is a small part of result we got.
 
   1. \[noise - street/sidewalk(loud music/party)] => \[noise - residential(loud music/party)] (Conf: 92.3019%, Supp: 37.4257%)
   2. \[noise - residential(loud talking)] => \[noise - residential(loud music/party)] (Conf: 92.1059%, Supp: 35.203%)
@@ -191,4 +191,8 @@ And here are some typical rules we got.
   5. \[derelict vehicle(with license plate)] => \[blocked driveway(no access)] (Conf: 89.0963%, Supp: 36.679%) 
   6. \[illegal parking(posted parking sign violation)] => \[noise - residential(loud music/party)] (Conf: 85.711%, Supp: 48.5392%)
   7. \[sanitation condition(15 street cond/dump-out/drop-off)] => \[blocked driveway(no access)] (Conf: 82.1169%, Supp: 41.1244%)
+  
+  Our result is close to real situation. For example, combining results with the actual situation, if people invite their friends to have a party at home, it's much likely that the music or their talking is loud. And host's friends who drive to the party may park their cars illegally. So when complaint about illegal parking or derelict vehicle happen, there are great possibilities that residents are having noisy parties in their house at the same community.
+  
+  What surprise us is the rule '\[heat/hot water(apartment only)] => \[noise - residential(loud music/party)]' which has great confidence and support value. We guess that an apartment that often has heat/hot water problem may have poor facility condition, and this leads to the poor sound isolation of walls, which makes noise problem much more serious.
 
