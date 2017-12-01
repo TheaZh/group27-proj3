@@ -192,7 +192,7 @@ And here is a small part of result we got.
   6. \[illegal parking(posted parking sign violation)] => \[noise - residential(loud music/party)] (Conf: 85.711%, Supp: 48.5392%)
   7. \[sanitation condition(15 street cond/dump-out/drop-off)] => \[blocked driveway(no access)] (Conf: 82.1169%, Supp: 41.1244%)
   
-  Our result is close to real situation. For example, combining results with the actual situation, if people invite their friends to have a party at home, it's much likely that the music or their talking is loud. And host's friends who drive to the party may park their cars illegally. So when complaint about illegal parking or derelict vehicle happen, there are great possibilities that residents are having noisy parties in their house at the same community.
+Our result is close to real situation. For example, combining results with the actual situation, if people invite their friends to have a party at home, it's much likely that the music or their talking is loud. And host's friends who drive to the party may park their cars illegally. So when complaint about illegal parking or derelict vehicle happen, there are great possibilities that residents are having noisy parties in their house at the same community.
   
-  What surprise us is the rule '\[heat/hot water(apartment only)] => \[noise - residential(loud music/party)]' which has great confidence and support value. We guess that an apartment that often has heat/hot water problem may have poor facility condition, and this leads to the poor sound isolation of walls, which makes noise problem much more serious.
+What surprise us is the rule '\[heat/hot water(apartment only)] => \[noise - residential(loud music/party)]' which has great confidence and support value. We guess that an apartment that often has heat/hot water problem may have poor facility condition, and this leads to the poor sound isolation of walls, which makes noise problem much more serious.
 
