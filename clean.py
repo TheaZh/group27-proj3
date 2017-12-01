@@ -19,16 +19,18 @@ with open('311_2015_remove2.csv', 'rb') as csvfile:
 		if row[0] == prev_community_board and row[1] == prev_created_date:
 			file.write(",")
 			file.write(complaint_type)
-			file.write("~")
+			file.write("(")
 			file.write(descriptor)
+			file.write(")")
 		else:
 			if prev_community_board != "":
 				file.write("\n")
 			prev_community_board = row[0]
 			prev_created_date = row[1]
 			file.write(complaint_type)
-			file.write("~")
+			file.write("(")
 			file.write(descriptor)
+			file.write(")")
 
 		# if reader.line_num == 100000:
 			# break

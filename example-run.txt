@@ -8,3 +8,71 @@
 ==High-confidence association rules (min_conf=75%)
 [noise - residential~banging/pounding] => [noise - residential~loud music/party] (Conf: 90%, Supp: 62%)
 [noise - residential~loud music/party] => [noise - residential~banging/pounding] (Conf: 82%, Supp: 62%)
+
+——————————————————————
+
+python app.py INTEGRATED-DATASET.csv 0.45 0.6
+==Frequent itemsets (min_sup = 0.45)
+[noise - residential(loud music/party)], 75.349%
+[noise - residential(banging/pounding)], 68.6954%
+[blocked driveway(no access)], 68.1524%
+[street condition(pothole)], 66.672%
+[heat/hot water(entire building)], 61.8448%
+[noise - residential(banging/pounding), noise - residential(loud music/party)], 61.7281%
+[blocked driveway(no access), noise - residential(loud music/party)], 59.9702%
+[heat/hot water(apartment only)], 56.8848%
+[street light condition(street light out)], 55.3602%
+[blocked driveway(no access), noise - residential(banging/pounding)], 54.9459%
+[heat/hot water(entire building), noise - residential(loud music/party)], 54.8373%
+[noise - residential(loud music/party), street condition(pothole)], 52.6047%
+[illegal parking(posted parking sign violation)], 52.476%
+[heat/hot water(entire building), noise - residential(banging/pounding)], 51.7277%
+[unsanitary condition(pests)], 51.06%
+[heat/hot water(apartment only), noise - residential(loud music/party)], 50.5411%
+[blocked driveway(no access), noise - residential(banging/pounding), noise - residential(loud music/party)], 49.5273%
+[blocked driveway(no access), street condition(pothole)], 49.1572%
+[heat/hot water(apartment only), heat/hot water(entire building)], 48.5136%
+[blocked driveway(no access), heat/hot water(entire building)], 48.3768%
+[noise - residential(banging/pounding), street condition(pothole)], 48.2682%
+[heat/hot water(apartment only), noise - residential(banging/pounding)], 47.1379%
+[heat/hot water(entire building), noise - residential(banging/pounding), noise - residential(loud music/party)], 47.0292%
+[sanitation condition(15 street cond/dump-out/drop-off)], 46.4098%
+[blocked driveway(partial access)], 45.7983%
+[noise - residential(loud music/party), unsanitary condition(pests)], 45.7138%
+[blocked driveway(no access), heat/hot water(apartment only)], 45.4403%
+[paint/plaster(ceiling)], 45.4202%
+==High-confidence association rules (min_conf = 0.6)
+[heat/hot water(entire building), noise - residential(banging/pounding)] => [noise - residential(loud music/party)] (Conf: 90.9169%, Supp: 47.0292%)
+[blocked driveway(no access), noise - residential(banging/pounding)] => [noise - residential(loud music/party)] (Conf: 90.1384%, Supp: 49.5273%)
+[noise - residential(banging/pounding)] => [noise - residential(loud music/party)] (Conf: 89.8577%, Supp: 61.7281%)
+[unsanitary condition(pests)] => [noise - residential(loud music/party)] (Conf: 89.5297%, Supp: 45.7138%)
+[heat/hot water(apartment only)] => [noise - residential(loud music/party)] (Conf: 88.848%, Supp: 50.5411%)
+[heat/hot water(entire building)] => [noise - residential(loud music/party)] (Conf: 88.6692%, Supp: 54.8373%)
+[blocked driveway(no access)] => [noise - residential(loud music/party)] (Conf: 87.9943%, Supp: 59.9702%)
+[heat/hot water(entire building), noise - residential(loud music/party)] => [noise - residential(banging/pounding)] (Conf: 85.7614%, Supp: 47.0292%)
+[heat/hot water(apartment only)] => [heat/hot water(entire building)] (Conf: 85.2839%, Supp: 48.5136%)
+[heat/hot water(entire building)] => [noise - residential(banging/pounding)] (Conf: 83.6412%, Supp: 51.7277%)
+[heat/hot water(apartment only)] => [noise - residential(banging/pounding)] (Conf: 82.8654%, Supp: 47.1379%)
+[blocked driveway(no access), noise - residential(loud music/party)] => [noise - residential(banging/pounding)] (Conf: 82.5865%, Supp: 49.5273%)
+[noise - residential(loud music/party)] => [noise - residential(banging/pounding)] (Conf: 81.923%, Supp: 61.7281%)
+[blocked driveway(no access)] => [noise - residential(banging/pounding)] (Conf: 80.6221%, Supp: 54.9459%)
+[noise - residential(banging/pounding), noise - residential(loud music/party)] => [blocked driveway(no access)] (Conf: 80.2346%, Supp: 49.5273%)
+[noise - residential(banging/pounding)] => [blocked driveway(no access)] (Conf: 79.9848%, Supp: 54.9459%)
+[heat/hot water(apartment only)] => [blocked driveway(no access)] (Conf: 79.8812%, Supp: 45.4403%)
+[noise - residential(loud music/party)] => [blocked driveway(no access)] (Conf: 79.59%, Supp: 59.9702%)
+[street condition(pothole)] => [noise - residential(loud music/party)] (Conf: 78.9007%, Supp: 52.6047%)
+[heat/hot water(entire building)] => [heat/hot water(apartment only)] (Conf: 78.4441%, Supp: 48.5136%)
+[heat/hot water(entire building)] => [blocked driveway(no access)] (Conf: 78.223%, Supp: 48.3768%)
+[noise - residential(banging/pounding), noise - residential(loud music/party)] => [heat/hot water(entire building)] (Conf: 76.1877%, Supp: 47.0292%)
+[noise - residential(banging/pounding)] => [heat/hot water(entire building)] (Conf: 75.3001%, Supp: 51.7277%)
+[street condition(pothole)] => [blocked driveway(no access)] (Conf: 73.7299%, Supp: 49.1572%)
+[noise - residential(loud music/party)] => [heat/hot water(entire building)] (Conf: 72.7777%, Supp: 54.8373%)
+[street condition(pothole)] => [noise - residential(banging/pounding)] (Conf: 72.3965%, Supp: 48.2682%)
+[blocked driveway(no access)] => [street condition(pothole)] (Conf: 72.1284%, Supp: 49.1572%)
+[blocked driveway(no access)] => [heat/hot water(entire building)] (Conf: 70.9834%, Supp: 48.3768%)
+[noise - residential(banging/pounding)] => [street condition(pothole)] (Conf: 70.2641%, Supp: 48.2682%)
+[noise - residential(loud music/party)] => [street condition(pothole)] (Conf: 69.8147%, Supp: 52.6047%)
+[noise - residential(banging/pounding)] => [heat/hot water(apartment only)] (Conf: 68.6186%, Supp: 47.1379%)
+[noise - residential(loud music/party)] => [heat/hot water(apartment only)] (Conf: 67.076%, Supp: 50.5411%)
+[blocked driveway(no access)] => [heat/hot water(apartment only)] (Conf: 66.6745%, Supp: 45.4403%)
+[noise - residential(loud music/party)] => [unsanitary condition(pests)] (Conf: 60.6695%, Supp: 45.7138%)

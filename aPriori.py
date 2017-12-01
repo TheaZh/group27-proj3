@@ -151,8 +151,8 @@ def main():
     baskets.append(["pen", "ink", "soap"])
 
     apriori = aPriori(baskets, 0.75, 0.8)
-    print apriori.print_tuples()
-    print apriori.print_rules()
+    apriori.print_tuples()
+    apriori.print_rules()
 
 
 if __name__ == '__main__':
