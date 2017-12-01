@@ -7,7 +7,7 @@ import csv
 file = open("INTEGRATED-DATASET.csv", "w")
 
 # with open('311_2015_remove0.csv', 'rb') as csvfile:
-with open('311_2015_remove2.csv', 'rb') as csvfile:
+with open('311_2015.csv', 'rb') as csvfile:
 	reader = csv.reader(csvfile, delimiter=',')
 	prev_community_board = ""
 	prev_created_date = ""
