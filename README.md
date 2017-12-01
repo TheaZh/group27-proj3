@@ -111,10 +111,10 @@ Description
 	  Command Line
 	
 	  ```
-	  \copy table311 FROM '/Users/peter/Study/17Fall/6111/project3/311_Service_Requests_from_2015.csv'  DELIMITER ',' CSV HEADER
+	  \copy table311 FROM 'path/to/311_Service_Requests_from_2015.csv'  DELIMITER ',' CSV HEADER
 	  ```
 	
-	* We create a new table (i.e. table 'small311') where we select attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', 'Community_Board') that we need without duplicate records. 
+	* We create a new table (i.e. table 'small311') where we select attributes(i.e. 'Created_Date', 'Complaint_Type', 'Descriptor', 'Community_Board') that we need. 
 	
 	  SQL
 
@@ -131,10 +131,10 @@ Description
 	  DELETE FROM small311 where Community_Board LIKE '%Unspecified%';
 	  DELETE FROM small311 where Complaint_Type = 'Missed Collection (All Materials)';
 	  ```
-	  Create a new csv file store data from table311small.
+	  Create a new csv file (311_2015.csv) to store data from small311 table without duplicate records.
 	  
 	  ```
-	 \copy (SELECT DISTINCT Community_Board, Created_Date, Complaint_Type, Descriptor FROM small311 order by Community_Board, Created_Date, Complaint_Type, Descriptor) To '/Users/peter/Study/17Fall/6111/project3/311_2015.csv' With CSV HEADER;
+	 \copy (SELECT DISTINCT Community_Board, Created_Date, Complaint_Type, Descriptor FROM small311 order by Community_Board, Created_Date, Complaint_Type, Descriptor) To 'path/to/311_2015.csv' With CSV HEADER;
 	  ```
 	
 	* Generate the INTEGRATED-DATASET.csv file 
