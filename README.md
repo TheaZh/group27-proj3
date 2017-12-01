@@ -38,13 +38,8 @@ Run
 2. Navigate to folder
 
 		cd ./group27-proj3
-
-3. Install dependencies
-
-		sudo apt install python-pip
-		sudo pip install -r requirements.txt
 		
-4. Run program
+3. Run program
 		
 		python app.py INTEGRATED-DATASET.csv [min_supp] [min_conf]
 		
@@ -52,7 +47,7 @@ Description
 ---------
 1. The data set
 
-	We use the [311 Service Requests From 2015](https://data.cityofnewyork.us/dataset/311-Service-Requests-From-2015/57g5-etyj) dataset.
+	We use the [311 Service Requests From 2015](https://data.cityofnewyork.us/dataset/311-Service-Requests-From-2015/57g5-etyj) dataset. It contains information of 311 complaint service records, including complaint types, date, communities and other details.
 
 2. Map the original NYC Open Data data set into our INTEGRATED-DATASET file
 	
