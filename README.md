@@ -161,10 +161,10 @@ Internal Design
 
 2. Itemsets
 
-	<b> Generate Itemsets </b>
+* Generate Itemsets
     * Generate Candidate set Ck+1 by iteration:     
-        * When generating candidate set C1, each candidate group contains one item.       
-        * When generating candidate set Ck+1, k >= 1, compute it from Lk as the refinement method described in the lecture within two for-loops to do the self join. Using set p and q as itemsets in Lk: if p and q only have one different item, then we can get the new candidate by merging them, then add it into Ck+1.        
+        * When generating candidate set C1, which contains one element in the each set.       
+        * When generating candidate set Ck, k > 0, we compute it from Lk according to the refinement described in [paper](http://www.cs.columbia.edu/~gravano/Qual/Papers/agrawal94.pdf). That is, we use two ```for``` loop, where we have two set ```q``` and ```p``` to realize the join step. If the p and q only have one different item (i.e. the intersection of these two sets is only one item), we consider it's a new candidate and we add it into Ck+1.
     * Filter the candidates by supp value.
     * If we cannot generate new Lk, stop iteration.
 
