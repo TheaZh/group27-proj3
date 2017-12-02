@@ -12,6 +12,7 @@ class aPriori(object):
         self.filter_by_conf()
 
     def supp(self, c):
+        """compute supp, keep in hashtable."""
         if c in self.supp_table:
             return self.supp_table[c]
 
@@ -30,6 +31,7 @@ class aPriori(object):
         return confidence
 
     def conf(self, tup1, tup1Ntup2):
+        """compute conf by supp."""
         return self.supp(tup1Ntup2) / self.supp(tup1)
 
     def generate_tuples(self):
@@ -43,7 +45,6 @@ class aPriori(object):
 
         k = 0
         Lk = set()
-        # Lk.add(tuple())
 
         # generate every supportive tuple add to res
         res = []
@@ -52,7 +53,6 @@ class aPriori(object):
                 break
             k += 1
             Lkp1 = set()
-            # print Lk
 
             # generate candidates Ckp1
             ''' # old method
@@ -65,11 +65,11 @@ class aPriori(object):
                 for i in ItemSet_l:
                     Ckp1.add(tuple(sorted(l + (i,))))
             '''
-
             if k == 1:
                 Ckp1 = self.generate_C1(ItemSet)
             else:
                 Ckp1 = self.generate_from_Lk(Lk)
+
             # check every candidate's support
             for c in Ckp1:
                 if self.supp(c) >= self.minsupp:
@@ -87,6 +87,7 @@ class aPriori(object):
         return C1
 
     def generate_from_Lk(self, Lk):
+        """Generate Ck+1 from Lk."""
         Ckp1 = set()
         for p in Lk:
             p_items = set(p)
@@ -117,6 +118,7 @@ class aPriori(object):
 
 
     def print_tuples(self, output_file):
+        """Print formatted associations."""
         tmp_line = '==Frequent itemsets (min_sup = '+str(self.minsupp) + ')'
         self.write_output_file(output_file, tmp_line)
         print '==Frequent itemsets (min_sup =', str(self.minsupp) + ')'
@@ -130,6 +132,7 @@ class aPriori(object):
             # print "--[{}], {}".format(tmp_itemset, "{0:.0f}%".format(self.supp(tup)*100))
 
     def print_rules(self, output_file):
+        """Print formatted rules."""
         print '==High-confidence association rules (min_conf =', str(self.minconf) + ')'
         tmp_line = '\n==High-confidence association rules (min_conf = '+ str(self.minconf) + ')'
         self.write_output_file(output_file, tmp_line)
@@ -139,17 +142,14 @@ class aPriori(object):
             print "{} (Conf: {}, Supp: {})".format(rule[0],  "{0:g}%".format(rule[1]*100), "{0:g}%".format(rule[2]*100))
             tmp_line = str("{} (Conf: {}, Supp: {})".format(rule[0],  "{0:g}%".format(rule[1]*100), "{0:g}%".format(rule[2]*100)))
             self.write_output_file(output_file, tmp_line)
-            # output_file.write(tmp_line)
 
     def write_output_file(self,output_file, str_line):
+        """Write to output file."""
         output_file.write(str_line)
         output_file.write("\n")
 
     def filter_by_conf(self):
-        """
-        compute conf
-        """
-        ## rule_strs = []
+        """Filter by conf."""
 
         self.rules_list = []
         for tup in self.supportive_tuples:
@@ -164,13 +164,9 @@ class aPriori(object):
                     confidence = self.conf(LHS, tup)
                     supp = self.supp(tup)
                     if confidence >= self.minconf:
-                        # print "{} => {} conf = {}".format(LHS, RHS, confidence)
                         LHS_str = ', '.join(LHS)
                         cur_rule = "[{}] => [{}]".format(LHS_str, RHS[0])
                         self.rules_list.append([cur_rule, confidence, supp])
-        # print self.rules_list
-        # print "[{}] => [{}] (Conf: {}, Supp: {})".format(LHS_str, RHS[0], confidence, supp)
-        # self.print_rules();
 
 def main():
     baskets = []
