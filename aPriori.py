@@ -98,7 +98,23 @@ class aPriori(object):
                     q_k = (q_items - intersention).pop()
                     if p_k < q_k:
                         Ckp1.add(tuple(sorted(p + (q_k,))))
-        return Ckp1
+        res_Ckp1 = self.prune(Ckp1, Lk)
+        return res_Ckp1
+
+
+    def prune(self, Ckp1, Lk):
+        res_Ckp1 = set(Ckp1)
+        for candidate in Ckp1:
+            candidate_set = set(candidate)
+            # subset of candidate_set
+            subsets = itertools.combinations(candidate_set, len(candidate_set)-1)
+            for sub in subsets:
+                tmp_tuple = tuple(sorted(sub))
+                if tmp_tuple not in Lk:
+                    res_Ckp1.remove(candidate)
+                    break
+        return res_Ckp1
+
 
     def print_tuples(self, output_file):
         tmp_line = '==Frequent itemsets (min_sup = '+str(self.minsupp) + ')'
