@@ -108,7 +108,7 @@ class aPriori(object):
         for candidate in Ckp1:
             candidate_set = set(candidate)
             # subset of candidate_set
-            subsets = itertools.combinations(candidate_set, len(candidate_set)-1)
+            subsets = combinations(candidate_set, len(candidate_set)-1)
             for sub in subsets:
                 tmp_tuple = tuple(sorted(sub))
                 if tmp_tuple not in Lk:
