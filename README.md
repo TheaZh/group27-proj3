@@ -52,7 +52,7 @@ Description
 
 2. Map the original NYC Open Data data set into our INTEGRATED-DATASET file
 
-	* After downloading the data csv file, we use postgreSQL to store all data in a SQL table (i.e. talbe 'table311'). The table contains all attributes of the dataset.
+	* After downloading the data csv file, we use <b>postgreSQL</b> to store all data in a SQL table (i.e. talbe 'table311'). The table contains all attributes of the dataset.
 
 	  ```sql
 		create table table311 (
